@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Drink = require('../models/drinkModel.js')
+const Drink = require('../models/drinksModel.js')
 
 // Index Route
 router.get('/', (req, res)=>{
