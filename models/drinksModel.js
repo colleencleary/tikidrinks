@@ -9,6 +9,7 @@ const drinkSchema = new mongoose.Schema({
   comments: [String],
   likes: Number,
   tags: [String]
+  image: String,
 })
 
 
