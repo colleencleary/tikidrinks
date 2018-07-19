@@ -10,7 +10,9 @@ app.controller('MainController', ['$http', function ($http) {
     this.changeInclude = (path) => {
         this.includePath = 'partials/'+ path +'.html';
     }
-
+    this.check = function(){
+      console.log('works');
+    }
     this.createUser = function(){
     $http({
         method:'POST',
