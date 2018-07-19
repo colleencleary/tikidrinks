@@ -10,6 +10,37 @@ app.controller('MainController', ['$http', function ($http) {
     this.changeInclude = (path) => {
         this.includePath = 'partials/'+ path +'.html';
     }
+
+    this.createUser = function(){
+    $http({
+        method:'POST',
+        url: '/users',
+        data: {
+            username: this.username,
+            password: this.password
+        }
+      }).then(function(response){
+        console.log(response);
+      }, function(){
+        console.log('error');
+      });
+    }
+
+    this.logIn = function(){
+      $http({
+          method:'POST',
+          url: '/sessions',
+          data: {
+            username: this.username,
+            password: this.password
+          }
+      }).then(function(response){
+          console.log(response);
+      }, function(){
+          console.log('error');
+      });
+    }
+
     this.createDrink = () => {
       this.createForm.likes = 0
       $http({
