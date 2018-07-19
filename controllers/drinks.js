@@ -47,7 +47,7 @@ router.get('/seed/newdrinks', (req, res)=>{
       recipe: 'Blend ingredients in a blender on pulse for 1-2 seconds. Any more will make the mix too watery. Pour it into the glass',
       comments: ['Wow, what a fruity drink!', 'My dad used to make these, delish!'],
       likes: 4,
-      tags: ['lemon', 'fruity', 'tropical']
+      tags: ['lemon', 'fruity', 'tropical'],
       image: 'http://tikiloungetalk.com/wp-content/uploads/2011/01/molakai-mike.jpg',
     },
     {
@@ -58,7 +58,7 @@ router.get('/seed/newdrinks', (req, res)=>{
       recipe: 'Pour everything into a shaker with ice, the Shake it up baby, twist and shout, strain into a cocktail glass.',
       comments: ['Looks interesting, I might try this one.', 'Blue ice cream with the gumball at the bottom…you’ve got me on that one.'],
       likes: 13,
-      tags: ['cocktails', 'drinks', 'tiki culture']
+      tags: ['cocktails', 'drinks', 'tiki culture'],
       image: 'http://tikiloungetalk.com/wp-content/uploads/2010/09/bluedevil.jpg',
     },
     {
@@ -69,7 +69,7 @@ router.get('/seed/newdrinks', (req, res)=>{
       recipe: 'Pour over ice in a large glass and stir. Garnish with an orange slice and a cherry. Pretty simple, very tasty! The sugars seem to make the booze hit your head faster than you’d think, so be careful with this one, kids.',
       comments: ['Too Sweet. I want my money back', 'Do not drink more than 5 of these at one time. Big mistake.'],
       likes: 2,
-      tags: ['florida', 'midori', 'tiki']
+      tags: ['florida', 'midori', 'tiki'],
       image: 'http://tikiloungetalk.com/wp-content/uploads/2010/08/midoridrink.jpeg',
     },
     {
@@ -80,7 +80,7 @@ router.get('/seed/newdrinks', (req, res)=>{
       recipe: 'Add at least 2 cups of crushed ice, then shake well for around 10 seconds. Pour unstrained into a double old-fashioned glass. Sink your spent lime shell in the drink.',
       comments: ['Tastes like I am on the beach!', 'I had this one a plane once'],
       likes: 765,
-      tags: ['hawaii', 'rum', 'flowers']
+      tags: ['hawaii', 'rum', 'flowers'],
       image: 'http://beachbumberry.com/img/MaiTai_NEW.jpg',
     }
   ]
@@ -92,6 +92,6 @@ router.get('/seed/newdrinks', (req, res)=>{
     res.json(drink)
   })
 
-  
+
 })
 module.exports = router;
