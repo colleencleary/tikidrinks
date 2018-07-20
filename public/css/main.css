@@ -1,0 +1,93 @@
+/* font-family: 'Questrial', sans-serif;
+font-family: 'Rock Salt', cursive;
+font-family: 'Slackey', cursive; */
+
+header {
+padding: 0;
+margin: 0;
+}
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Questrial', sans-serif;
+}
+header {
+  width: 100%;
+  padding: 50px 0;
+}
+nav {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-around;
+}
+main {
+  background: url('../assets/mod-header.jpg');
+  width: 100%;
+  object-fit: cover;
+  padding: 30px;
+  margin: 0;
+  background-color: #23282B;
+  background-blend-mode: luminosity;
+}
+div {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-family: 'Slackey', cursive;
+  font-size: 6em;
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+  color: #2C4353;
+}
+h2 {
+  font-family: 'Yellowtail', cursive;
+  font-size: 3em;
+  margin: 0;
+  left: 0;
+  padding: 0;
+  color: #E4D9BB;
+}
+.header-image{
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+  background: url('../assets/luau-tangerine.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #AA150D;
+  background-blend-mode: luminosity;
+}
+.off-center {
+  text-align: left;
+  width: 44%;
+  margin: 0 auto;
+  z-index: 1;
+}
+.rotate-text {
+  transform: rotate(-25deg);
+  width: 500px;
+  margin-bottom: -37px;
+  width: 50px;
+}
+.grayscale {
+    /* -webkit-filter: grayscale(80%) brightness(70%);
+    filter: grayscale(80%) brightness(70%); */
+}
+.rows {
+  width: 80%;
+  display: inline-flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+.container img {
+  width: 230px;
+  height: 250px;
+  object-fit: cover;
+}

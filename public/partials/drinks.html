@@ -1,7 +1,7 @@
 <h3>Tiki Drinks</h3>
-<p>{{ctrl.drinks[0].name}}</p>
-<div ng-repeat="drink in ctrl.drinks">
-  <img src="{{drink.image}}" alt="{{drink.name}}">
-  <h3>{{drink.name}}</h3>
-
+<div class="rows">
+  <div class="drinks" ng-repeat="drink in ctrl.drinks">
+    <img src="{{drink.image}}" alt="{{drink.name}}">
+    <h3>{{drink.name}}</h3>
+  </div>
 </div>
