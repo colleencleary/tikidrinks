@@ -10,15 +10,18 @@
 	</head>
 
 	<body ng-controller="MainController as ctrl">
-    <div class="header-image grayscale">
-      <header ng-include="'partials/header.html'"></header>
-  		<nav ng-include="'partials/navigation.html'"></nav>
+    <div class="shadow">
+      <div class="header-image">
+        <header ng-include="'partials/header.html'"></header>
+
+      </div>
     </div>
+
     <main>
       <div class="container">
         <div ng-include="ctrl.includePath"></div>
     	</div>
     </main>
-
+    <footer ng-include="'partials/footer.html'"></footer>
 	</body>
 </html>

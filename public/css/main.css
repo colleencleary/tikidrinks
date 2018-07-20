@@ -1,25 +1,53 @@
 /* font-family: 'Questrial', sans-serif;
 font-family: 'Rock Salt', cursive;
 font-family: 'Slackey', cursive; */
-
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 header {
-padding: 0;
+/* padding: 0; */
 margin: 0;
+z-index: 1;
+width: 100%;
+padding: 50px 0;
+box-shadow: 0px 0px 10px rgba(0,0,0,.5);
 }
 body {
+  /* max-width: 850px; */
   width: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Questrial', sans-serif;
+
 }
-header {
-  width: 100%;
-  padding: 50px 0;
-}
+
 nav {
   display: inline-flex;
   width: 100%;
   justify-content: space-around;
+}
+footer {
+  background: url('../assets/tiki-footer.jpg');
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: repeat;
+  /* background-position: bottom; */
+  /* background-color: #AA150D; */
+  /* background-blend-mode: luminosity; */
+  filter: brightness(90%);
+  box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+  text-align: center;
+  padding: 60px;
+
+}
+footer h1 {
+  text-shadow: 0 0 20px #2C4353;
+  color: #F2635C;
+  font-size: 2em;
 }
 main {
   background: url('../assets/mod-header.jpg');
@@ -27,8 +55,9 @@ main {
   object-fit: cover;
   padding: 30px;
   margin: 0;
-  background-color: #23282B;
+  background-color: #000000;
   background-blend-mode: luminosity;
+  z-index: 0;
 }
 div {
   margin: 0;
@@ -52,7 +81,7 @@ h2 {
 }
 .header-image{
   margin: 0;
-  padding: 10px;
+  /* padding: 10px; */
   width: 100%;
   background: url('../assets/luau-tangerine.jpg');
   background-repeat: no-repeat;
@@ -60,9 +89,13 @@ h2 {
   text-align: center;
   display: flex;
   flex-direction: column;
-
   background-color: #AA150D;
   background-blend-mode: luminosity;
+}
+.shadow {
+  width: 100%;
+
+
 }
 .off-center {
   text-align: left;
@@ -76,18 +109,22 @@ h2 {
   margin-bottom: -37px;
   width: 50px;
 }
-.grayscale {
-    /* -webkit-filter: grayscale(80%) brightness(70%);
-    filter: grayscale(80%) brightness(70%); */
-}
 .rows {
-  width: 80%;
+  width: 100%;
   display: inline-flex;
   justify-content: space-around;
   margin: 0 auto;
+}
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 .container img {
   width: 230px;
   height: 250px;
   object-fit: cover;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.7);
 }
