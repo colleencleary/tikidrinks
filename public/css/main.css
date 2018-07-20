@@ -35,29 +35,33 @@ nav {
   margin: 0;
   padding: 1%;
 }
+nav h5, .header-font {
+  cursor: pointer;
+}
 h5 {
   margin-bottom: 0;
   padding-top: 30px;
 }
 footer {
-  background: url('../assets/tiki-footer.jpg');
+  /* background: url('../assets/tiki-footer.jpg'); */
   width: 100%;
   object-fit: cover;
   /* background-size: cover;
   background-repeat: repeat; */
   background-position: bottom;
-  /* background-color: #AA150D; */
+  background-color: #2C4353;
   /* background-blend-mode: luminosity; */
-  filter: brightness(90%);
+  /* filter: brightness(90%); */
   box-shadow: 0px 0px 10px rgba(0,0,0,.5);
   text-align: center;
-  padding: 100px;
+  padding: 50px;
 
 }
 footer h1 {
-  text-shadow: 0 0 20px #2C4353;
-  color: #F2635C;
+  /* text-shadow: 0 0 20px #2C4353; */
+  color: #CA726E;
   font-size: 2em;
+
 }
 main {
   background-image: url('../assets/tiki-footer.jpg');
@@ -95,16 +99,16 @@ h2 {
   font-size: 3em;
 }
 .container h2 {
-  color: #CA726E;
+  color: #E4D9BB;
   font-size: 5em;
-  text-shadow: 0 0 2px #2C4353;
+  text-shadow: 2px 2px 4px #2C4353;
   padding-bottom: 40px;
   padding-top: 60px;
 }
 h3 {
-  color: #2C4353;
+  color: #C94D46;
   font-size: 2em;
-  text-shadow: 0 0 2px #E4D9BB;
+  text-shadow: 0 0 10px #E4D9BB;
 }
 .header-image{
   margin: 0;
@@ -146,6 +150,7 @@ h3 {
   background: rgba(104, 99, 85, .5);
   /* box-shadow: 0px 0px 10px rgba(42, 40, 34, .5); */
   padding-bottom: 200px;
+  padding-top: 50px;
 
 
 }
@@ -158,4 +163,51 @@ h3 {
 .content-container {
   width: 80%;
   text-align: center;
+}
+label {
+  margin-bottom: 20px;
+  padding: 20px;
+  display: block;
+}
+input {
+  background: #2C4353;
+  font-family: 'Yellowtail', cursive;
+  color: #E4D9BB;
+  font-size: 2em;
+  padding: 1%;
+  border: 1px solid #837F73;
+  width: 330px;
+  display: block;
+  margin: 1% auto;
+}
+input[type=submit] {
+  color: #E4D9BB;
+  background: #2C4353;
+  width: 150px;
+  text-align: center;
+  font-family: 'Slackey', cursive;
+}
+input[type=submit]:hover {
+  color: #C94D46;
+  background: #E4D9BB;
+}
+input:focus {
+  outline: #E4D9BB;
+  box-shadow: 0px 0px 50px #F7E9CA;
+}
+#footer-icon {
+  filter: invert(100%) sepia(100%);
+  width: 70px;
+  left: 0;
+  margin-top: 30px;
+}
+.drinks {
+  padding: 30px;
+}
+.drinks img:hover {
+  box-shadow: 0px 0px 50px #F7E9CA;
+  cursor: pointer;
+}
+.drinks a{
+  text-decoration: none;
 }
