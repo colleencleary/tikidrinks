@@ -53,7 +53,8 @@ main {
   background: url('../assets/mod-header.jpg');
   width: 100%;
   object-fit: cover;
-  padding: 30px;
+  padding: 50px;
+  padding-bottom: 200px;
   margin: 0;
   background-color: #000000;
   background-blend-mode: luminosity;
@@ -71,13 +72,23 @@ h1 {
   line-height: 1em;
   color: #2C4353;
 }
-h2 {
+h2, h3 {
   font-family: 'Yellowtail', cursive;
-  font-size: 3em;
   margin: 0;
   left: 0;
   padding: 0;
+}
+h2 {
   color: #E4D9BB;
+  font-size: 3em;
+}
+.container h2 {
+  color: #2C4353;
+  font-size: 5em;
+}
+h3 {
+  color: #2C4353;
+  font-size: 2em;
 }
 .header-image{
   margin: 0;
@@ -91,11 +102,6 @@ h2 {
   flex-direction: column;
   background-color: #AA150D;
   background-blend-mode: luminosity;
-}
-.shadow {
-  width: 100%;
-
-
 }
 .off-center {
   text-align: left;
@@ -127,4 +133,8 @@ h2 {
   height: 250px;
   object-fit: cover;
   box-shadow: 0px 0px 10px rgba(0,0,0,.7);
+}
+.content-container {
+  width: 100%;
+  text-align: center;
 }
