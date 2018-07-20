@@ -73,6 +73,7 @@ app.controller('MainController', ['$http', function ($http) {
     }
 
     this.logIn = function(){
+      // console.log('works');
       $http({
           method:'POST',
           url: '/sessions',

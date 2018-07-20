@@ -1,9 +1,16 @@
 // Dependencies
 const express = require("express");
 const mongoose = require("mongoose");
+const session = require('express-session')
 const app = express();
 
 // Middleware
+app.use(session({
+    secret:'soletsgonowhere',
+    resave: false,
+    saveUninitialized: false
+}));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(express.json());
