@@ -12,7 +12,7 @@ header {
 margin: 0;
 z-index: 1;
 width: 100%;
-padding: 50px 0;
+padding-top: 50px;
 box-shadow: 0px 0px 10px rgba(0,0,0,.5);
 }
 body {
@@ -28,20 +28,30 @@ nav {
   display: inline-flex;
   width: 100%;
   justify-content: space-around;
+  color: #E4D9BB;
+  font-size: 2em;
+  font-family: 'Yellowtail', cursive;
+  /* bottom: 0; */
+  margin: 0;
+  padding: 1%;
+}
+h5 {
+  margin-bottom: 0;
+  padding-top: 30px;
 }
 footer {
   background: url('../assets/tiki-footer.jpg');
   width: 100%;
   object-fit: cover;
-  background-size: cover;
-  background-repeat: repeat;
-  /* background-position: bottom; */
+  /* background-size: cover;
+  background-repeat: repeat; */
+  background-position: bottom;
   /* background-color: #AA150D; */
   /* background-blend-mode: luminosity; */
   filter: brightness(90%);
   box-shadow: 0px 0px 10px rgba(0,0,0,.5);
   text-align: center;
-  padding: 60px;
+  padding: 100px;
 
 }
 footer h1 {
@@ -50,14 +60,16 @@ footer h1 {
   font-size: 2em;
 }
 main {
-  background: url('../assets/mod-header.jpg');
+  background-image: url('../assets/tiki-footer.jpg');
   width: 100%;
+  /* height: 100%; */
   object-fit: cover;
-  padding: 50px;
-  padding-bottom: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* padding: 50px; */
   margin: 0;
-  background-color: #000000;
-  background-blend-mode: luminosity;
+  background-color: #777062;
+  background-blend-mode: lighten;
   z-index: 0;
 }
 div {
@@ -70,7 +82,7 @@ h1 {
   margin: 0;
   padding: 0;
   line-height: 1em;
-  color: #2C4353;
+  color: #CA726E;
 }
 h2, h3 {
   font-family: 'Yellowtail', cursive;
@@ -83,25 +95,30 @@ h2 {
   font-size: 3em;
 }
 .container h2 {
-  color: #2C4353;
+  color: #CA726E;
   font-size: 5em;
+  text-shadow: 0 0 2px #2C4353;
+  padding-bottom: 40px;
+  padding-top: 60px;
 }
 h3 {
   color: #2C4353;
   font-size: 2em;
+  text-shadow: 0 0 2px #E4D9BB;
 }
 .header-image{
   margin: 0;
   /* padding: 10px; */
   width: 100%;
-  background: url('../assets/luau-tangerine.jpg');
+  background: url('../assets/luau-blue.png');
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
   display: flex;
   flex-direction: column;
-  background-color: #AA150D;
-  background-blend-mode: luminosity;
+  background-color: #2C4353;
+  /* background-color: #000000; */
+  background-blend-mode: multiply;
 }
 .off-center {
   text-align: left;
@@ -126,6 +143,10 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(104, 99, 85, .5);
+  /* box-shadow: 0px 0px 10px rgba(42, 40, 34, .5); */
+  padding-bottom: 200px;
+
 
 }
 .container img {
@@ -135,6 +156,6 @@ h3 {
   box-shadow: 0px 0px 10px rgba(0,0,0,.7);
 }
 .content-container {
-  width: 100%;
+  width: 80%;
   text-align: center;
 }
