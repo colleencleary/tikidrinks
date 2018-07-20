@@ -1,11 +1,16 @@
-<h2>Log In</h2>
-<form ng-submit="ctrl.logIn()">
-    <input type="text" ng-model="ctrl.username"/>
-    <input type="password" ng-model="ctrl.password"/>
-    <input type="submit" value="Log In"/>
-</form>
-<!-- <h2>Reveal to "the app"</h2>
-<a href="#" ng-click="ctrl.goApp()">Click here to reveal the app</a>
-<div ng-if="auth.loggedInUserName">
-    Welcome to the app, {{auth.loggedInUserName}}
-</div> -->
+<h2>Create User</h2>
+      <form ng-submit="ctrl.createUser()">
+          <input type="text" ng-model="ctrl.username" placeholder="username"/>
+          <input type="password" ng-model="ctrl.password" placeholder="password"/>
+          <input type="submit" value="Create User"/>
+      </form>
+      <h2>Log In</h2>
+      <form ng-submit="ctrl.logIn()">
+          <input type="text" ng-model="ctrl.username" placeholder="username"/>
+          <input type="password" ng-model="ctrl.password" placeholder="password"/>
+          <input type="submit" value="Log In"/>
+      </form>
+      <!-- <a href="#" ng-click="ctrl.goApp()">Click here to reveal the app</a>
+      <div ng-if="ctrl.loggedInUserName">
+          Welcome to the app, {{ctrl.loggedInUserName}}
+      </div> -->
