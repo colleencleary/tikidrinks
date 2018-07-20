@@ -89,11 +89,15 @@ app.controller('MainController', ['$http', function ($http) {
     }
 
     this.createDrink = () => {
-      this.createForm.ingredients.split(',')
+      this.createForm.ingredients = this.createForm.ingredients.split(',')
+
+      this.createForm.garnishes =
       this.createForm.garnishes.split(',')
-      this.createForm.comments.split(',')
+
+      this.createForm.tags =
       this.createForm.tags.split(',')
 
+      console.log(this.createForm);
       this.createForm.likes = 0
       $http({
         method:'POST',
