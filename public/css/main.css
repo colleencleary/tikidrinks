@@ -124,11 +124,17 @@ h3 {
   /* background-color: #000000; */
   background-blend-mode: multiply;
 }
+.header-font{
+  width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
 .off-center {
   text-align: left;
-  width: 44%;
+  width: 85%;
   margin: 0 auto;
   z-index: 1;
+  position: relative;
 }
 .rotate-text {
   transform: rotate(-25deg);
@@ -203,11 +209,9 @@ input:focus {
 }
 .drinks {
   padding: 30px;
+  cursor: pointer;
 }
 .drinks img:hover {
   box-shadow: 0px 0px 50px #F7E9CA;
   cursor: pointer;
-}
-.drinks a{
-  text-decoration: none;
 }
