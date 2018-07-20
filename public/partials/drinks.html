@@ -3,6 +3,8 @@
 	<input type='text' placeholder='Search...' ng-model='searchBox'>
 </label>
 
+
+
 <div class="rows">
   <div class="drinks" ng-repeat="drink in ctrl.drinks | filter: searchBox | orderBy: drink.name" ng-click="ctrl.drink={{drink}}; ctrl.changeInclude('drink-details')">
     <img src="{{drink.image}}" alt="{{drink.name}}">
