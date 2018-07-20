@@ -136,6 +136,13 @@ app.controller('MainController', ['$http', function ($http) {
     }
 
     this.updateDrink = (drink) => {
+      this.createForm.ingredients = this.createForm.ingredients.split(',')
+
+      this.createForm.garnishes =
+      this.createForm.garnishes.split(',')
+
+      this.createForm.tags =
+      this.createForm.tags.split(',')
       $http({
         method:'PUT',
         url: '/drinks/' + drink._id,
