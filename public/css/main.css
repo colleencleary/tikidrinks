@@ -103,7 +103,7 @@ h2 {
   font-size: 5em;
   text-shadow: 2px 2px 4px #2C4353;
   padding-bottom: 40px;
-  padding-top: 60px;
+  /* padding-top: 60px; */
 }
 h3 {
   color: #C94D46;
