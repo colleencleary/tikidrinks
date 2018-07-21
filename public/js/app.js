@@ -3,14 +3,17 @@ const app = angular.module("TikiApp", []);
 app.controller("MainController", [
   "$http",
   function($http) {
-    //Toggle Login
-    this.toggleLogin = () => {
-      this.showLogin = !this.showLogin;
-    };
+    // //Toggle Login
+    // this.toggleLogin = () => {
+    //   this.showLogin = !this.showLogin;
+    // };
+    //
+    // this.toggleLogout = () => {
+    //   this.loggedIn = !this.loggedIn;
+    // };
 
-    this.toggleLogout = () => {
-      this.loggedIn = !this.loggedIn;
-    };
+    this.user = null;
+    this.userLoggedIn = false;
 
     this.createForm = {};
     this.drink = "";
@@ -133,17 +136,22 @@ app.controller("MainController", [
     };
 
     this.logIn = function() {
-      // console.log('works');
       $http({
         method: "POST",
         url: "/sessions",
         data: {
-          username: this.username,
-          password: this.password
+          username: this.logUsername,
+          password: this.logPassword
         }
       }).then(
         function(response) {
           console.log(response);
+          controller.userLoggedIn = true;
+          controller.getUser();
+          controller.changeInclude("home");
+
+          controller.logUsername = "";
+          controller.logPassword = "";
         },
         function() {
           console.log("error");
@@ -151,6 +159,21 @@ app.controller("MainController", [
       );
     };
 
+    this.logOut = () => {
+      $http({
+        method: "DELETE",
+        url: "/sessions"
+      }).then(
+        res => {
+          console.log(res);
+          controller.userLoggedIn = false;
+          controller.changeInclude("home");
+        },
+        err => {
+          console.log("Failed to log user out");
+        }
+      );
+    };
     this.createDrink = () => {
       this.createForm.ingredients = this.createForm.ingredients.split(",");
 
