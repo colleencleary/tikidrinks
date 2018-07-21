@@ -1,15 +1,32 @@
-<h2>Create User</h2>
-      <form ng-submit="ctrl.createUser()">
+<form class="row hide-login" ng-submit="ctrl.logIn()" ng-class="(ctrl.showLogin ? 'Logged' : '') + ' ' + (ctrl.loggedIn ? 'Login' : '')">
+  <h2>Log In</h2>
+    <input type="text" ng-model="ctrl.username" placeholder="username"/>
+    <input type="password" ng-model="ctrl.password" placeholder="password"/>
+    <input type="submit" value="Log In" ng-click="ctrl.toggleLogin()" />
+</form>
+<!-- <a href="/sessions">Login</a>
+ <div ng-if="ctrl.loggedInUserName">
+     Welcome to the app, {{ctrl.loggedInUserName}}
+ </div> -->
+
+
+
+
+
+      <form class="row" ng-class="(ctrl.showLogin ? 'hide-login' : '')" ng-submit="ctrl.createUser()">
+        <h2>Create User</h2>
           <input type="text" ng-model="ctrl.username" placeholder="username"/>
           <input type="password" ng-model="ctrl.password" placeholder="password"/>
-          <input type="submit" value="Create User"/>
+          <input type="submit" value="Create User" ng-click="ctrl.toggleLogin()" />
       </form>
-      <h2>Log In</h2>
-      <form ng-submit="ctrl.logIn()">
-          <input type="text" ng-model="ctrl.username" placeholder="username"/>
-          <input type="password" ng-model="ctrl.password" placeholder="password"/>
-          <input type="submit" value="Log In"/>
-      </form>
+
+      <form class="row" ng-class="(ctrl.loggedIn ? '' : 'Login')">
+			<div class="col-2 offset-10">
+				<input  type="submit" value="Log Out" ng-click="ctrl.logOut()" />
+			</div>
+		</form>
+
+
       <!-- <a href="#" ng-click="ctrl.goApp()">Click here to reveal the app</a>
       <div ng-if="ctrl.loggedInUserName">
           Welcome to the app, {{ctrl.loggedInUserName}}
