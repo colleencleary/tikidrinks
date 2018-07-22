@@ -8,7 +8,7 @@ app.controller("MainController", [
     this.showComments = false;
     this.createForm = {};
     this.drink = "";
-    this.currentUser = '';
+    // this.currentUser = '';
     this.test = "works";
     this.includePath = "partials/drinks.html";
 
@@ -285,6 +285,29 @@ app.controller("MainController", [
       }).then(
         response => {
           console.log(response.data);
+        },
+        error => {
+          console.log(error.message);
+        }
+      );
+    };
+
+    this.createComment = drink => {
+      this.createForm.comment.author = this.username;
+      this.createForm.comment.date = new Date()
+      console.log(this.createForm.comment);
+      // console.log(drink);
+      $http({
+        method: "PUT",
+        url: "/drinks/" + drink._id,
+        data: this.createForm.comment
+      }).then(
+        response => {
+          console.log(this.createForm.comment);
+          console.log(response.data);
+          this.drink.comments.push(this.createForm.comment);
+          this.createForm = {};
+          console.log(this.drink.comments);
         },
         error => {
           console.log(error.message);
