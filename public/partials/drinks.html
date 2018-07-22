@@ -1,34 +1,54 @@
 <!-- <h2>Tiki Drinks</h2> -->
-  <label for="Search by">
+<label for="Search by">
 	<input type='text' placeholder='Search...' ng-model='searchBox'>
 </label>
 
 <div class="drink-details" ng-show="ctrl.showDetails">
-  <h6 ng-click="ctrl.showDetails=false" style="width: 100%; text-align: right; color: #c94d46; font-size: 2em; margin: 0; padding: 1%; cursor: pointer">X</h6>
+  <h6 ng-click="ctrl.showDetails=false" style="width: 100%; text-align: right; color: #c94d46; font-size: 2em; margin: 0; padding: 2%; cursor: pointer">X</h6>
   <h1>{{ctrl.drink.name}}</h1>
 
-  <h4 ng-if="{{ctrl.drink.author}}">submitted by: {{ctrl.drink.author}}</h4>
+  <h4>submitted by: {{ctrl.drink.author}}</h4>
   <div class="social">
     <h4>{{ctrl.drink.likes}} likes | </h4>
     <h4>{{ctrl.drink.comments.length}} comments</h4>
   </div>
-  <h4 style="width: 60%; margin: 0 auto; color: #747274">{{ctrl.drink.description}}</h4>
-  <img src="{{ctrl.drink.image}}" alt="{{ctrl.drink.name}}">
+  <h4 style="width: 60%; margin: 5px auto; color: #747274">{{ctrl.drink.description}}</h4>
 
-  Ingredients:
-  <ul ng-repeat="ingredient in ctrl.drink.ingredients">
-    <li>{{ingredient}}</li>
-  </ul>
-  Garnishes:
-  <ul ng-repeat="garnish in ctrl.drink.garnishes">
-    <li>{{garnish}}</li>
-  </ul>
+  <div class="small-container">
+    <div class="detail-image">
+      <img class="details" src="{{ctrl.drink.image}}" alt="{{ctrl.drink.name}}">
+    </div>
 
-  {{ctrl.drink.recipe}}
 
-  <ul ng-repeat="tag in ctrl.drink.tags">
-    <li>{{tag}}</li>
-  </ul>
+    <div class="ingredients-garnishes">
+      <div class="ingredients">
+        <span style="">Ingredients:</span>
+        <ul ng-repeat="ingredient in ctrl.drink.ingredients">
+          <li>{{ingredient}}</li>
+        </ul>
+      </div>
+      <div class="garnishes">
+        <span style="">Optional Garnishes:</span>
+        <ul ng-repeat="garnish in ctrl.drink.garnishes">
+          <li>{{garnish}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="recipe">
+    <ol>
+      <li ng-repeat="step in ctrl.drink.recipe">{{step}}</li>
+    </ol>
+  </div>
+
+  <div class="tag-container">
+    <ul class="tags">
+      <span ng-repeat="tag in ctrl.drink.tags">
+    <li>{{tag}},  </li>
+  </span>
+      <li>tiki</li>
+    </ul>
+  </div>
 
 
 </div>

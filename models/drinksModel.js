@@ -6,7 +6,7 @@ const drinkSchema = new mongoose.Schema({
   description: String,
   ingredients: [String],
   garnishes: [String],
-  recipe: String,
+  recipe: [String],
   comments: [String],
   likes: Number,
   tags: [String],

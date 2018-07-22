@@ -158,7 +158,7 @@ h3 {
   padding-bottom: 200px;
   padding-top: 50px;
 }
-.container img {
+.drinks img {
   width: 230px;
   height: 250px;
   object-fit: cover;
@@ -271,3 +271,71 @@ h4 {
   justify-content: center;
   /* font-size: .5em; */
 }
+.ingredients-garnishes ul, .tags ul {
+  /* display: block; */
+  margin: 0;
+}
+.ingredients-garnishes{
+  /* display: inline-flex;
+  justify-content: space-around; */
+  text-align: left;
+  width: auto;
+  margin: 2%;
+}
+.tags {
+  display: inline-flex;
+  justify-content: center;
+}
+.ingredients-garnishes span {
+
+}
+.ingredients, .garnishes, .tags {
+  width: auto;
+  margin-bottom: 20px;
+  margin: 1%;
+}
+.detail-image img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+.detail-image {
+  /* width: 100%; */
+  /*  */
+  display: flex;
+  align-items: flex-end;
+  /* width: 50%; */
+  margin: 1%;
+}
+.tags {
+
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+}
+.tag-container {
+  width: 100%;
+  display: inline-block;
+  margin: 20px;
+  font-style: italic;
+}
+.small-container {
+  display: inline-flex;
+  width: 100%;
+  margin: 10px 0;
+  margin-left: 0;
+  justify-content: center;
+}
+ol {
+  text-align: left;
+  width: 70%;
+  margin: 0 auto;
+}
+ol li {
+  margin: 1%;
+}
+/* .recipes {
+  width: 60%;
+  margin: 0 auto;
+} */

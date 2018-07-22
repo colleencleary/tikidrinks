@@ -30,6 +30,7 @@ app.controller("MainController", [
     this.drinks = [
       {
         name: "Molokai Mike",
+        author: "seanbrier",
         description:
           "Somewhere around 1934 our old pal Trader Vic Bergeron concocted a frozen drink that not only tasted great, it looked fantastic.",
         ingredients: [
@@ -42,7 +43,7 @@ app.controller("MainController", [
         ],
         garnishes: ["umbrella", "lemon slice"],
         recipe:
-          "Blend ingredients in a blender on pulse for 1-2 seconds. Any more will make the mix too watery. Pour it into the glass",
+          ["Blend ingredients in a blender on pulse for 1-2 seconds. Any more will make the mix too watery.", "Pour drink into the glass and garnish with umbrella and lemon slice.", "Enjoy!"],
         comments: [
           "Wow, what a fruity drink!",
           "My dad used to make these, delish!"
@@ -54,6 +55,7 @@ app.controller("MainController", [
       },
       {
         name: "The Blue Devil",
+        author: "seanbrier",
         description:
           "It’s sort of like a blue version of a Singapore Sling, sort of, at least you’ll agree with me after your third.",
         ingredients: [
@@ -65,7 +67,7 @@ app.controller("MainController", [
         ],
         garnishes: ["Mericino Cherry"],
         recipe:
-          "Pour everything into a shaker with ice, the Shake it up baby, twist and shout, strain into a cocktail glass.",
+          ["Pour everything into a shaker with ice.", "Shake it up baby, twist and shout!", "strain into a cocktail glass."],
         comments: [
           "Looks interesting, I might try this one.",
           "Blue ice cream with the gumball at the bottom…you’ve got me on that one."
@@ -77,8 +79,9 @@ app.controller("MainController", [
       },
       {
         name: "The Sweet Caroline",
+        author: "seanbrier",
         description:
-          "It’s got a nice sweet taste, with citrus kick. Kind of like this girl named Caroline I used to know.",
+          "It’s got a nice sweet taste, with citrus kick. Kind of like this girl named Caroline I used to know. Pretty simple, very tasty! The sugars seem to make the booze hit your head faster than you’d think, so be careful with this one, kids.",
         ingredients: [
           "1 oz Midori",
           "1 oz Amaretto",
@@ -87,7 +90,7 @@ app.controller("MainController", [
         ],
         garnishes: ["orange slice", "cherry"],
         recipe:
-          "Pour over ice in a large glass and stir. Garnish with an orange slice and a cherry. Pretty simple, very tasty! The sugars seem to make the booze hit your head faster than you’d think, so be careful with this one, kids.",
+          ["Mix all ingredients in a shaker","Pour over ice in a large glass and stir", "Garnish with an orange slice and a cherry. "],
         comments: [
           "Too Sweet. I want my money back",
           "Do not drink more than 5 of these at one time. Big mistake."
@@ -99,6 +102,7 @@ app.controller("MainController", [
       },
       {
         name: "Mai Tai",
+        author: "seanbrier",
         description: "The drink Hawai'i made famous",
         ingredients: [
           "1 oz. lime juice",
@@ -110,7 +114,7 @@ app.controller("MainController", [
         ],
         garnishes: ["tropical flower", "umbrella"],
         recipe:
-          "Add at least 2 cups of crushed ice, then shake well for around 10 seconds. Pour unstrained into a double old-fashioned glass. Sink your spent lime shell in the drink.",
+        [ "Add at least 2 cups of crushed ice", "Shake well for around 10 seconds.", "Pour unstrained into a double old-fashioned glass.",  "Sink your spent lime shell in the drink."],
         comments: [
           "Tastes like I am on the beach!",
           "I had this one a plane once"
@@ -160,14 +164,14 @@ app.controller("MainController", [
 
     this.createDrink = () => {
       this.createForm.ingredients = this.createForm.ingredients.split(",");
-
       this.createForm.garnishes = this.createForm.garnishes.split(",");
-
       this.createForm.tags = this.createForm.tags.split(",");
+      this.createForm.recipe = this.createForm.recipe.split(". ");
+
+      this.createForm.likes = 0;
+      this.createForm.author = req.session.currentUser
 
       console.log(this.createForm);
-      this.createForm.likes = 0;
-      this.createForm.author =
       $http({
         method: "POST",
         url: "/drinks",
