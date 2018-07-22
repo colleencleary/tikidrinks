@@ -1,0 +1,13 @@
+
+<form class="row" ng-class="(ctrl.showLogin ? 'hide-login' : '')" ng-submit="ctrl.createUser()">
+  <h2>Create User</h2>
+    <input type="text" ng-model="ctrl.username" placeholder="username"/>
+    <input type="password" ng-model="ctrl.password" placeholder="password"/>
+    <input type="submit" value="Create User" ng-click="ctrl.toggleLogin()" />
+</form>
+
+<form class="row" ng-class="(ctrl.loggedIn ? '' : 'Login')">
+<div class="col-2 offset-10">
+  <input  type="submit" value="Log Out" ng-click="ctrl.logOut()" />
+</div>
+</form>
