@@ -3,10 +3,12 @@
 	<input type='text' placeholder='Search...' ng-model='searchBox'>
 </label>
 
-
+<div class="rows drink-details" ng-show="ctrl.showDetails">
+  <h1>{{ctrl.drink.name}}</h1>
+</div>
 
 <div class="rows">
-  <div class="drinks" ng-repeat="drink in ctrl.drinks | filter: searchBox | orderBy: drink.name" ng-click="ctrl.drink={{drink}}; ctrl.changeInclude('drink-details')">
+  <div class="drinks" ng-repeat="drink in ctrl.drinks | filter: searchBox | orderBy: drink.name" ng-click="ctrl.toggleDetails(drink)">
     <img src="{{drink.image}}" alt="{{drink.name}}">
     <h3>{{drink.name}}</h3>
   </div>

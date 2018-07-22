@@ -3,6 +3,12 @@ const app = angular.module("TikiApp", []);
 app.controller("MainController", [
   "$http",
   function($http) {
+    this.showDetails=false;
+    this.createForm = {};
+    this.drink = "";
+    this.test = "works";
+    this.includePath = "partials/drinks.html";
+
     //Toggle Login
     this.toggleLogin = () => {
       this.showLogin = !this.showLogin;
@@ -12,10 +18,11 @@ app.controller("MainController", [
       this.loggedIn = !this.loggedIn;
     };
 
-    this.createForm = {};
-    this.drink = "";
-    this.test = "works";
-    this.includePath = "partials/drinks.html";
+    this.toggleDetails = (drink) => {
+      this.showDetails = !this.showDetails
+      this.drink = drink
+    }
+
 
     this.changeInclude = path => {
       this.includePath = "partials/" + path + ".html";
