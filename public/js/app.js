@@ -189,7 +189,7 @@ app.controller("MainController", [
           console.log("logged out");
           controller.toggleLogin();
           controller.loggedIn = false;
-          controller.user = "Not Logged In";
+          controller.user = "Login to Submit A Drink";
         },
         function() {
           console.log("error");

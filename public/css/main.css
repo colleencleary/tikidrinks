@@ -348,6 +348,11 @@ ol li {
   text-align: center;
 }
 
+.welcome {
+  text-align: center;
+  display: inline;
+}
+
 /* .recipes {
   width: 60%;
   margin: 0 auto;
