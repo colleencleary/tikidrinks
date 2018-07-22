@@ -1,18 +1,15 @@
-<form class="row" ng-submit="ctrl.logIn()">
+<form class="row" ng-submit="ctrl.logIn()" ng-class="(ctrl.showLogin ? 'Logged' : '') + ' ' + (ctrl.loggedIn ? 'Log' : '')">
 
   <h2>Log In</h2>
     <input type="text" ng-model="ctrl.username" placeholder="username"/>
     <input type="password" ng-model="ctrl.password" placeholder="password"/>
-    <input type="submit" value="Log In" ng-click="ctrl.logIn()"/>
-</form>
-
-<form class="row" ng-submit="ctrl.logOut()">
-  <input  type="submit" value="Log Out" ng-click="ctrl.logOut()" />
-</div>
+    <h4 class="create-account" ng-click="ctrl.changeInclude('createAccount')">Need to create an account?</h4>
+    <input type="submit" value="Log In" ng-click="ctrl.toggleLogout()"/>
 </form>
 
 
-<h4 class="create-account" ng-click="ctrl.changeInclude('createAccount')">Need to create an account?</h4>
+
+
 
 
 

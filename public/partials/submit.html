@@ -1,6 +1,6 @@
 <div class="add">
   <h2>Add a New Drink</h2>
-  <form ng-submit='ctrl.createDrink()' class="submitForm">
+  <form ng-submit='ctrl.createDrink()' id="submitForm"  ng-class="(ctrl.loggedIn ? 'hide-log' : 'Log')">
 
     <table>
       <tr>
