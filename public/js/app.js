@@ -4,6 +4,7 @@ app.controller("MainController", [
   "$http",
   function($http) {
     this.showDetails=false;
+    this.showComments=false;
     this.createForm = {};
     this.drink = "";
     this.test = "works";
@@ -23,6 +24,9 @@ app.controller("MainController", [
       this.drink = drink
     }
 
+    this.toggleComments = () => {
+      this.showComments = !this.showComments;
+    };
 
     this.changeInclude = path => {
       this.includePath = "partials/" + path + ".html";

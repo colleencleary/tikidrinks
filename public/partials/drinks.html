@@ -50,6 +50,15 @@
     </ul>
   </div>
 
+<h6 ng-click="ctrl.toggleComments()">Show Comments</h6>
+<div ng-show="ctrl.showComments" class="comments">
+  <table ng-repeat="comment in ctrl.drink.comments">
+    <tr>
+      <!-- <td>{{ctrl.drink.comment.author}}</td> -->
+      <td>{{comment}}</td>
+    </tr>
+  </table>
+</div>
 
 </div>
 
