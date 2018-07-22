@@ -3,8 +3,9 @@ const app = angular.module("TikiApp", []);
 app.controller("MainController", [
   "$http",
   function($http) {
-    this.showDetails=false;
-    this.showComments=false;
+    const controller = this;
+    this.showDetails = false;
+    this.showComments = false;
     this.createForm = {};
     this.drink = "";
     this.currentUser = '';
@@ -21,10 +22,10 @@ app.controller("MainController", [
       this.loggedIn = !this.loggedIn;
     };
 
-    this.toggleDetails = (drink) => {
+    this.toggleDetails = drink => {
       this.showDetails = true;
-      this.drink = drink
-    }
+      this.drink = drink;
+    };
 
     this.toggleComments = () => {
       this.showComments = !this.showComments;
@@ -48,8 +49,11 @@ app.controller("MainController", [
           "1/2 cup crushed ice"
         ],
         garnishes: ["umbrella", "lemon slice"],
-        recipe:
-          ["Blend ingredients in a blender on pulse for 1-2 seconds. Any more will make the mix too watery.", "Pour drink into the glass and garnish with umbrella and lemon slice.", "Enjoy!"],
+        recipe: [
+          "Blend ingredients in a blender on pulse for 1-2 seconds. Any more will make the mix too watery.",
+          "Pour drink into the glass and garnish with umbrella and lemon slice.",
+          "Enjoy!"
+        ],
         comments: [
           {body: "Wow, what a fruity drink!", author: 'kendra'},
           {body: "My dad used to make these, delish!", author: 'seanbrier'}
@@ -72,8 +76,11 @@ app.controller("MainController", [
           "10ml Cherry Brandy"
         ],
         garnishes: ["Mericino Cherry"],
-        recipe:
-          ["Pour everything into a shaker with ice.", "Shake it up baby, twist and shout!", "strain into a cocktail glass."],
+        recipe: [
+          "Pour everything into a shaker with ice.",
+          "Shake it up baby, twist and shout!",
+          "strain into a cocktail glass."
+        ],
         comments: [
           "Looks interesting, I might try this one.",
           "Blue ice cream with the gumball at the bottom…you’ve got me on that one."
@@ -95,8 +102,11 @@ app.controller("MainController", [
           "Fill with Orange Juice"
         ],
         garnishes: ["orange slice", "cherry"],
-        recipe:
-          ["Mix all ingredients in a shaker","Pour over ice in a large glass and stir", "Garnish with an orange slice and a cherry. "],
+        recipe: [
+          "Mix all ingredients in a shaker",
+          "Pour over ice in a large glass and stir",
+          "Garnish with an orange slice and a cherry. "
+        ],
         comments: [
           "Too Sweet. I want my money back",
           "Do not drink more than 5 of these at one time. Big mistake."
@@ -119,8 +129,12 @@ app.controller("MainController", [
           "1/4 oz. sugar"
         ],
         garnishes: ["tropical flower", "umbrella"],
-        recipe:
-        [ "Add at least 2 cups of crushed ice", "Shake well for around 10 seconds.", "Pour unstrained into a double old-fashioned glass.",  "Sink your spent lime shell in the drink."],
+        recipe: [
+          "Add at least 2 cups of crushed ice",
+          "Shake well for around 10 seconds.",
+          "Pour unstrained into a double old-fashioned glass.",
+          "Sink your spent lime shell in the drink."
+        ],
         comments: [
           "Tastes like I am on the beach!",
           "I had this one a plane once"
@@ -141,7 +155,7 @@ app.controller("MainController", [
         }
       }).then(
         function(response) {
-          console.log(response);
+          // console.log(response);
         },
         function() {
           console.log("error");
@@ -168,15 +182,29 @@ app.controller("MainController", [
       );
     };
 
+    // Log Out
+    this.logOut = function() {
+      $http({
+        method: "DELETE",
+        url: "/sessions"
+      }).then(
+        function(response) {
+          console.log("logged out");
+        },
+        function() {
+          console.log("error");
+        }
+      );
+    };
+
     this.createDrink = () => {
-      this.createForm.ingredients.split(",");
-      this.createForm.garnishes.split(",");
-      this.createForm.tags.split(",");
-      this.createForm.recipe.split(". ");
+      this.createForm.ingredients = this.createForm.ingredients.split(",");
+      this.createForm.garnishes = this.createForm.garnishes.split(",");
+      this.createForm.tags = this.createForm.tags.split(",");
+      this.createForm.recipe = this.createForm.recipe.split(". ");
 
       this.createForm.likes = 0;
-      this.createForm.author = this.username
-
+      this.createForm.author = this.username;
       console.log(this.createForm);
       $http({
         method: "POST",

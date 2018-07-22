@@ -150,10 +150,10 @@ h3 {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.rows:after {
+/* .rows:after {
   content: "";
   flex: auto;
-}
+} */
 .container {
   width: 100%;
   display: flex;
@@ -167,7 +167,7 @@ h3 {
 .drinks img {
   width: 230px;
   height: 250px;
-  object-fit: cover;
+  object-fit: fill;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
 }
 .content-container {
