@@ -7,7 +7,7 @@ const drinkSchema = new mongoose.Schema({
   ingredients: [String],
   garnishes: [String],
   recipe: [String],
-  comments: [String],
+  comments: [{ body: String, author: String, date: { type: Date, default: Date.now }}],
   likes: Number,
   tags: [String],
   image: String,

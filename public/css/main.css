@@ -279,7 +279,7 @@ h4 {
   /* display: inline-flex;
   justify-content: space-around; */
   text-align: left;
-  width: auto;
+  width: 250px;
   margin: 2%;
 }
 .tags {
@@ -291,8 +291,9 @@ h4 {
 }
 .ingredients, .garnishes, .tags {
   width: auto;
-  margin-bottom: 20px;
   margin: 1%;
+  margin-bottom: 20px;
+
 }
 .detail-image img {
   display: block;
@@ -317,7 +318,8 @@ h4 {
 .tag-container {
   width: 100%;
   display: inline-block;
-  margin: 20px;
+
+  margin: 20px 0;
   font-style: italic;
 }
 .small-container {
@@ -339,3 +341,30 @@ ol li {
   width: 60%;
   margin: 0 auto;
 } */
+.comments {
+  padding-bottom: 50px;
+}
+td {
+  padding: 30px 0;
+}
+table, th, td {
+  border: 1px solid #2c4353;
+}
+table {
+  border-collapse: collapse;
+}
+.comment-header {
+  font-size: 1em;
+  text-align: left;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  margin: 0;
+}
+.submitComment {
+  width: 70%;
+  margin: 0 auto;
+}
+.smaller-container {
+  margin: 0 auto;
+  width: 500px;
+}

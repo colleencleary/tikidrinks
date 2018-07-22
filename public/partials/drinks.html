@@ -43,19 +43,33 @@
 
   <div class="tag-container">
     <ul class="tags">
+      <li>Tags: </li>
       <span ng-repeat="tag in ctrl.drink.tags">
     <li>{{tag}},  </li>
   </span>
       <li>tiki</li>
     </ul>
   </div>
+  <div class="submitComment">
+    <div class="smaller-container">
+      <h5 class="comment-header" style="padding-bottom: 5px; padding-left: 0; width: 200px">comment on this drink!</h6>
 
-<h6 ng-click="ctrl.toggleComments()">Show Comments</h6>
+        <form ng-submit='ctrl.createComment()' class="submitForm" style="padding-top: 0; width: 500px;">
+            <textarea type="text" ng-model='ctrl.createForm.comment' rows="4" style="margin: 0;"></textarea>
+
+          <input type="submit" value="submit" style="margin: 0 auto; text-align: center; width: 190px;">
+        </form>
+    </div>
+  </div>
+
+<h6 ng-click="ctrl.toggleComments()" class="comment-header" ng-show="!ctrl.showComments">Show Comments</h6>
+<h6 ng-click="ctrl.toggleComments()" class="comment-header" ng-show="ctrl.showComments">Hide Comments</h6>
+
 <div ng-show="ctrl.showComments" class="comments">
-  <table ng-repeat="comment in ctrl.drink.comments">
-    <tr>
-      <!-- <td>{{ctrl.drink.comment.author}}</td> -->
-      <td>{{comment}}</td>
+  <table>
+    <tr ng-repeat="comment in ctrl.drink.comments">
+      <td>{{comment.author}} <br /> on <br /> {{comment.date}}</td>
+      <td>{{comment.body}}</td>
     </tr>
   </table>
 </div>

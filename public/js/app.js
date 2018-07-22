@@ -49,8 +49,8 @@ app.controller("MainController", [
         recipe:
           ["Blend ingredients in a blender on pulse for 1-2 seconds. Any more will make the mix too watery.", "Pour drink into the glass and garnish with umbrella and lemon slice.", "Enjoy!"],
         comments: [
-          "Wow, what a fruity drink!",
-          "My dad used to make these, delish!"
+          {body: "Wow, what a fruity drink!", author: 'kendra'},
+          {body: "My dad used to make these, delish!", author: 'seanbrier'}
         ],
         likes: 4,
         tags: ["lemon", "fruity", "tropical"],
