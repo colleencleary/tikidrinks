@@ -7,8 +7,10 @@ app.controller("MainController", [
     this.showComments=false;
     this.createForm = {};
     this.drink = "";
+    this.currentUser = '';
     this.test = "works";
     this.includePath = "partials/drinks.html";
+
 
     //Toggle Login
     this.toggleLogin = () => {
@@ -167,13 +169,13 @@ app.controller("MainController", [
     };
 
     this.createDrink = () => {
-      this.createForm.ingredients = this.createForm.ingredients.split(",");
-      this.createForm.garnishes = this.createForm.garnishes.split(",");
-      this.createForm.tags = this.createForm.tags.split(",");
-      this.createForm.recipe = this.createForm.recipe.split(". ");
+      this.createForm.ingredients.split(",");
+      this.createForm.garnishes.split(",");
+      this.createForm.tags.split(",");
+      this.createForm.recipe.split(". ");
 
       this.createForm.likes = 0;
-      this.createForm.author = req.session.currentUser
+      this.createForm.author = this.username
 
       console.log(this.createForm);
       $http({
