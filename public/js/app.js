@@ -19,7 +19,7 @@ app.controller("MainController", [
     };
 
     this.toggleDetails = (drink) => {
-      this.showDetails = !this.showDetails
+      this.showDetails = true;
       this.drink = drink
     }
 
@@ -167,6 +167,7 @@ app.controller("MainController", [
 
       console.log(this.createForm);
       this.createForm.likes = 0;
+      this.createForm.author =
       $http({
         method: "POST",
         url: "/drinks",

@@ -3,13 +3,42 @@
 	<input type='text' placeholder='Search...' ng-model='searchBox'>
 </label>
 
-<div class="rows drink-details" ng-show="ctrl.showDetails">
+<div class="drink-details" ng-show="ctrl.showDetails">
+  <h6 ng-click="ctrl.showDetails=false" style="width: 100%; text-align: right; color: #c94d46; font-size: 2em; margin: 0; padding: 1%; cursor: pointer">X</h6>
   <h1>{{ctrl.drink.name}}</h1>
+
+  <h4 ng-if="{{ctrl.drink.author}}">submitted by: {{ctrl.drink.author}}</h4>
+  <div class="social">
+    <h4>{{ctrl.drink.likes}} likes | </h4>
+    <h4>{{ctrl.drink.comments.length}} comments</h4>
+  </div>
+  <h4 style="width: 60%; margin: 0 auto; color: #747274">{{ctrl.drink.description}}</h4>
+  <img src="{{ctrl.drink.image}}" alt="{{ctrl.drink.name}}">
+
+  Ingredients:
+  <ul ng-repeat="ingredient in ctrl.drink.ingredients">
+    <li>{{ingredient}}</li>
+  </ul>
+  Garnishes:
+  <ul ng-repeat="garnish in ctrl.drink.garnishes">
+    <li>{{garnish}}</li>
+  </ul>
+
+  {{ctrl.drink.recipe}}
+
+  <ul ng-repeat="tag in ctrl.drink.tags">
+    <li>{{tag}}</li>
+  </ul>
+
+
 </div>
 
 <div class="rows">
-  <div class="drinks" ng-repeat="drink in ctrl.drinks | filter: searchBox | orderBy: drink.name" ng-click="ctrl.toggleDetails(drink)">
-    <img src="{{drink.image}}" alt="{{drink.name}}">
-    <h3>{{drink.name}}</h3>
+  <div class="drinks" ng-repeat="drink in ctrl.drinks | filter: searchBox | orderBy: name">
+    <div class="clickForDetail" ng-click="ctrl.toggleDetails(drink)">
+      <img src="{{drink.image}}" alt="{{drink.name}}">
+      <h3>{{drink.name}}</h3>
+    </div>
+
   </div>
 </div>
