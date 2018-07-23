@@ -421,6 +421,7 @@ table {
   font-size: 1em;
   font-family: "Yellowtail", cursive;
   padding: 0 10px 0 0;
+  text-shadow: 2px 2px 4px black;
 }
 .nav-bar h5 {
   margin-left: 30px;
@@ -428,4 +429,8 @@ table {
 }
 .nav-bar h5:hover {
   color: #ca726e;
+}
+.welcome h5 {
+  text-shadow: 2px 2px 4px black;
+  font-size: 1.1em;
 }
