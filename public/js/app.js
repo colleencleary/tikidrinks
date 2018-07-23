@@ -8,6 +8,7 @@ app.controller("MainController", [
     this.showDetails = false;
     this.showComments = false;
     this.alreadyLiked = false;
+    this.authorTools = false;
     this.gifUrl= '../assets/skullstill.png'
     this.createForm = {};
     this.drink = "";
@@ -262,11 +263,11 @@ app.controller("MainController", [
     };
 
     this.updateDrink = drink => {
-      this.createForm.ingredients = this.createForm.ingredients.split(",");
+      console.log(this.createForm);
+     this.createForm.ingredients.split(",");
+     this.createForm.garnishes.split(",");
 
-      this.createForm.garnishes = this.createForm.garnishes.split(",");
-
-      this.createForm.tags = this.createForm.tags.split(",");
+      this.createForm.tags.split(",");
       $http({
         method: "PUT",
         url: "/drinks/" + drink._id,
@@ -274,14 +275,19 @@ app.controller("MainController", [
       }).then(
         response => {
           console.log(response);
-          this.getDrinks();
-          this.showUpdateForm = false;
+          this.includePath = "partials/drinks.html";
+
         },
         error => {
           console.log(error);
         }
       );
     };
+
+    this.goToEdit = (drink)=>{
+      this.createForm = this.drink
+      this.changeInclude('edit')
+    }
 
     this.likeDrink = drink => {
       drink.likes++;

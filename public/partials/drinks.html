@@ -12,6 +12,12 @@
     <h4>{{ctrl.drink.likes}} likes | </h4>
     <h4>{{ctrl.drink.comments.length}} comments</h4>
   </div>
+	<br />
+	<!-- edit drink -->
+	<div class="social" style='justify-content: space-between; width: 20%' >
+		<h4 ng-click="ctrl.goToEdit(drink)" style='color: #ca7263'> edit</h4>
+		<h4 style='color: #ca7263'>delete</h4>
+	</div>
   <h4 style="width: 60%; margin: 5px auto; color: #747274">{{ctrl.drink.description}}</h4>
 
   <div class="small-container">
