@@ -13,7 +13,6 @@ app.controller("MainController", [
     this.test = "works";
     this.includePath = "partials/drinks.html";
 
-
     //Toggle Login
     this.toggleLogin = () => {
       this.showLogin = !this.showLogin;
@@ -56,8 +55,8 @@ app.controller("MainController", [
           "Enjoy!"
         ],
         comments: [
-          {body: "Wow, what a fruity drink!", author: 'kendra'},
-          {body: "My dad used to make these, delish!", author: 'seanbrier'}
+          { body: "Wow, what a fruity drink!", author: "kendra" },
+          { body: "My dad used to make these, delish!", author: "seanbrier" }
         ],
         likes: 4,
         tags: ["lemon", "fruity", "tropical"],
@@ -174,7 +173,7 @@ app.controller("MainController", [
       }).then(
         function(response) {
           controller.loggedInUsername = response.data.user;
-          controller.user = "Logged In " + controller.username;
+          controller.user = "Welcome " + controller.username;
         },
         function() {
           console.log("error");
@@ -296,7 +295,7 @@ app.controller("MainController", [
 
     this.createComment = drink => {
       this.createForm.comment.author = this.username;
-      this.createForm.comment.date = new Date().getTime()
+      this.createForm.comment.date = new Date().getTime();
       console.log(this.createForm.comment);
       // console.log(drink);
       $http({
