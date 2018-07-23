@@ -238,7 +238,7 @@ app.controller("MainController", [
         url: "/drinks"
       }).then(
         response => {
-          this.drinks = response.data; 
+          this.drinks = response.data;
         },
         error => {
           console.log(error);
@@ -246,10 +246,11 @@ app.controller("MainController", [
       );
     };
 
-    this.deleteDrink = drink => {
+    this.deleteDrink = id => {
+      // console.log(drink);
       $http({
         method: "DELETE",
-        url: "/drinks/" + drink._id
+        url: "/drinks/" + id
       })
         .then(response => {
           console.log(response.data);
