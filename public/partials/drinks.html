@@ -54,8 +54,8 @@
     <div class="smaller-container">
       <h5 class="comment-header" style="padding-bottom: 5px; padding-left: 0; width: 200px">comment on this drink!</h6>
 
-        <form ng-submit='ctrl.createComment()' class="submitForm" style="padding-top: 0; width: 500px;">
-            <textarea type="text" ng-model='ctrl.createForm.comment' rows="4" style="margin: 0;"></textarea>
+        <form ng-submit='ctrl.createComment(ctrl.drink)' class="submitForm" style="padding-top: 0; width: 500px;">
+            <textarea type="text" ng-model='ctrl.createForm.comment.body' rows="4" style="margin: 0;"></textarea>
 
           <input type="submit" value="submit" style="margin: 0 auto; text-align: center; width: 190px;">
         </form>
@@ -68,7 +68,7 @@
 <div ng-show="ctrl.showComments" class="comments">
   <table>
     <tr ng-repeat="comment in ctrl.drink.comments">
-      <td>{{comment.author}} <br /> on <br /> {{comment.date}}</td>
+      <td>{{comment.author}} <br /> on <br /> {{comment.date | date:'MM/dd/yy @ h:mma'}}</td>
       <td>{{comment.body}}</td>
     </tr>
   </table>
