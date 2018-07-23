@@ -438,17 +438,16 @@ table {
   font-size: 1.1em;
 }
 .freezeGif {
-<<<<<<< HEAD
   animation: freeze;
   animation-duration: 1s;
 }
+/* 
 @keyframes freeze {
   0% {
     content: "../assets/skullgif.gif";
   }
   100% {
     content: "../assets/skullstillAloha.png";
-=======
   animation:freeze;
   animation-duration: 2s;
 }
@@ -458,9 +457,8 @@ table {
   }
   100% {
     content: url('../assets/skullstillAloha.png');
->>>>>>> f432b503f2eb04cf75d4412a6311973c2876170a
   }
-}
+} */
 
 img.contacts {
   width: 100px;
