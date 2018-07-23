@@ -10,7 +10,7 @@ Technologies Used:
 * HTML
 * CSS
 * Express
-* Angular
+* AngularJS
 * Node.js
 * Mongoose
 
