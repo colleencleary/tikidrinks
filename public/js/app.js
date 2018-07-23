@@ -4,6 +4,7 @@ app.controller("MainController", [
   "$http",
   function($http) {
     const controller = this;
+    var _timeout;
     this.loggedIn = false;
     this.showDetails = false;
     this.showComments = false;
@@ -310,9 +311,13 @@ app.controller("MainController", [
     };
 
     this.delayGifFreeze = () => {
-      setTimeout(() => {
-        this.gifUrl= '../assets/skullstillAloha.png'
-      }, 1000);
+      _timeout = $timeout(function() {
+            this.gifUrl= '../assets/skullstillAloha.png'
+            _timeout = null;
+        }, 500);
+      // $timeout(() => {
+      //   this.gifUrl= '../assets/skullstillAloha.png'
+      // }, 1000);
     }
 
     this.unlikeDrink = drink => {
