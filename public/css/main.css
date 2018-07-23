@@ -408,4 +408,5 @@ table {
   display: inline-flex;
   justify-content: left;
   align-items: baseline;
+  cursor: pointer;
 }
