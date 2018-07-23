@@ -394,3 +394,19 @@ table {
   margin: 0 auto;
   width: 500px;
 }
+.skullstill {
+  height: 60px;
+  width: auto;
+}
+.likeSkull {
+  background: #281D1D;
+  width: 90%;
+  padding-bottom: 10px;
+  padding-top: -10px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-flex;
+  justify-content: left;
+  align-items: baseline;
+  cursor: pointer;
+}
