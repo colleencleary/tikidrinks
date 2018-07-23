@@ -257,6 +257,8 @@ app.controller("MainController", [
               drink => drink._id === id
             );
             this.drinks.splice(removeByIndex, 1);
+            this.includePath = "partials/drinks.html";
+            this.showDetails = false;
           },
           error => {
             console.log(error);
