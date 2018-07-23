@@ -298,7 +298,6 @@ h4 {
   width: auto;
   margin: 1%;
   margin-bottom: 20px;
-
 }
 .detail-image img {
   display: block;
@@ -306,7 +305,6 @@ h4 {
   height: 300px;
   margin: 0 auto;
   object-fit: fill;
-
 }
 .detail-image {
   /* width: 100%; */
@@ -373,7 +371,9 @@ ol li {
 td {
   padding: 30px 0;
 }
-table, th, td {
+table,
+th,
+td {
   border: 1px solid #2c4353;
 }
 table {
@@ -393,4 +393,12 @@ table {
 .smaller-container {
   margin: 0 auto;
   width: 500px;
+}
+
+.logout input[type="submit"] {
+  border: none;
+  background: none;
+  font-size: 1em;
+  font-family: "Yellowtail", cursive;
+  padding: 0 10px 0 0;
 }

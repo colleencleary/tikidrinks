@@ -2,4 +2,6 @@
 <h5 ng-class ="(ctrl.loggedIn ? '' : 'Log')" ng-click="ctrl.changeInclude('submit')">Submit a new drink</h5>
 <h5 ng-click="ctrl.changeInclude('locations')">Tiki Bars</h5>
 <h5 ng-click="ctrl.changeInclude('login')">Log in/Join</h5>
-<h5 ng-class ="(ctrl.loggedIn ? '' : 'Log')" ng-click="ctrl.changeInclude('logout')">Log out</h5>
+<form class="logout" ng-class="(ctrl.loggedIn ? '' : 'Log')">
+  <input  type="submit" value="Log Out" ng-click="ctrl.logOut()" />
+</form>
