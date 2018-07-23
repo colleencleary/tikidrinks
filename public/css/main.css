@@ -434,3 +434,15 @@ table {
   text-shadow: 2px 2px 4px black;
   font-size: 1.1em;
 }
+.freezeGif {
+  animation:freeze;
+  animation-duration: 1s;
+}
+@keyframes freeze {
+  0% {
+    content: '../assets/skullgif.gif';
+  }
+  100% {
+    content: '../assets/skullstillAloha.png';
+  }
+}
