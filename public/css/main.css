@@ -158,6 +158,10 @@ h3 {
   content: "";
   flex: auto;
 } */
+.dark-background {
+    background-color: rgba(228, 217, 187, 0.8);
+    border-radius: 20px;
+}
 .container {
   width: 100%;
   display: flex;
