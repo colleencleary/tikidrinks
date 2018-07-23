@@ -441,7 +441,7 @@ table {
   animation: freeze;
   animation-duration: 1s;
 }
-/* 
+/*
 @keyframes freeze {
   0% {
     content: "../assets/skullgif.gif";
@@ -461,13 +461,25 @@ table {
 } */
 
 img.contacts {
-  width: 100px;
-  height: 150px;
-  border-radius: 50%;
+  border-radius: 25%;
   margin: 25px 0 10px 0;
   padding: 0;
 }
 
+img.colleen {
+  width: 200px;
+  height: 200px;
+}
+
+img.kendra {
+  width: 180px;
+  height: 230px;
+}
+
+img.sean {
+  width: 200px;
+  height: 200px;
+}
 a.contacts {
   margin: 10px 0 50px 0;
 }
