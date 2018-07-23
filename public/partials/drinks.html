@@ -87,11 +87,8 @@
 </div>
 
 <div class="rows">
-  <div class="drinks" ng-repeat="drink in ctrl.drinks | filter: searchBox | orderBy: name">
-    <div class="clickForDetail" ng-click="ctrl.toggleDetails(drink)">
+    <div ng-repeat="drink in ctrl.drinks | filter: searchBox" class="clickForDetail" ng-click="ctrl.toggleDetails(drink)" ng-if="drink.name">
       <img src="{{drink.image}}" alt="{{drink.name}}">
       <h3>{{drink.name}}</h3>
     </div>
-
-  </div>
 </div>
