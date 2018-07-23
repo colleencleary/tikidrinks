@@ -164,8 +164,8 @@ h3 {
   flex: auto;
 } */
 .dark-background {
-    background-color: rgba(228, 217, 187, 0.8);
-    border-radius: 20px;
+  background-color: rgba(228, 217, 187, 0.8);
+  border-radius: 20px;
 }
 .container {
   width: 100%;
@@ -416,7 +416,7 @@ table {
   padding-bottom: 10px;
   padding-top: -10px; */
   border-radius: 10px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   overflow: hidden;
   display: inline-flex;
   justify-content: left;
@@ -443,14 +443,17 @@ table {
   text-shadow: 2px 2px 4px black;
   font-size: 1.1em;
 }
-.like {
-  z-index: 1;
+/* .freezeGif {
+  animation: freeze;
+  animation-duration: 1s;
 }
-.unlike {
-  z-index: 1;
-}
-/* .skullgif {
-  z-index: 0;
+/*
+@keyframes freeze {
+  0% {
+    content: "../assets/skullgif.gif";
+  }
+  100% {
+    content: "../assets/skullstillAloha.png";
   animation:freeze;
   animation-duration: 2s;
 }
@@ -461,4 +464,25 @@ table {
   100% {
     display: none;
   }
-} */
+} */ */
+
+img.contacts {
+  width: 100px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 25px 0 10px 0;
+  padding: 0;
+}
+
+a.contacts {
+  margin: 10px 0 50px 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+  color: #f7e9ca;
+}
