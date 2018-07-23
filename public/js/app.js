@@ -206,10 +206,10 @@ app.controller("MainController", [
     };
 
     this.createDrink = () => {
-      // this.createForm.ingredients = this.createForm.ingredients.split(",");
-      // this.createForm.garnishes = this.createForm.garnishes.split(",");
-      // this.createForm.tags = this.createForm.tags.split(",");
-      // this.createForm.recipe = this.createForm.recipe.split(". ");
+      this.createForm.ingredients = this.createForm.ingredients.split(",");
+      this.createForm.garnishes = this.createForm.garnishes.split(",");
+      this.createForm.tags = this.createForm.tags.split(",");
+      this.createForm.recipe = this.createForm.recipe.split(". ");
 
       this.createForm.likes = 0;
       this.createForm.author = this.username;
