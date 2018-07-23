@@ -25,7 +25,7 @@ body {
 nav {
   display: inline-flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   color: #e4d9bb;
   font-size: 2em;
   font-family: "Yellowtail", cursive;
@@ -375,7 +375,7 @@ ol li {
 td {
   padding: 30px 0;
 }
-table,
+.comments table,
 th,
 td {
   border: 1px solid #2c4353;
@@ -421,4 +421,11 @@ table {
   font-size: 1em;
   font-family: "Yellowtail", cursive;
   padding: 0 10px 0 0;
+}
+.nav-bar h5 {
+  margin-left: 30px;
+  text-shadow: 2px 2px 4px black;
+}
+.nav-bar h5:hover {
+  color: #ca726e;
 }
