@@ -1,0 +1,13 @@
+<form ng-submit="ctrl.getLocations()">
+  <input type="text" placeholder="Enter City" ng-model="{{ctrl.businesses.city}}" />
+	<button type="submit">SUBMIT</button>
+</form>
+
+<div ng-repeat='location in ctrl.locations'>
+  <img ng-src='{{ location.businesses.image_url}}' />
+  {{location.businesses.name}}<br />
+  {{location.businesses.address1}}<br />
+  {{location.businesses.phone}}<br />
+  {{location.businesses.rating}}
+  <hr />
+</div>
