@@ -34,7 +34,9 @@ nav {
   padding: 1%;
 }
 nav h5,
-.header-font, .create-account, .clickForDetail {
+.header-font,
+.create-account,
+.clickForDetail {
   cursor: pointer;
 }
 h5 {
@@ -87,7 +89,9 @@ h1 {
   line-height: 1em;
   color: #ca726e;
 }
-h2, h3, h5 {
+h2,
+h3,
+h5 {
   font-family: "Yellowtail", cursive;
   margin: 0;
   left: 0;
@@ -224,7 +228,7 @@ textarea:focus {
 }
 .clickForDetail:hover {
   box-shadow: 0px 0px 100px #f7e9ca;
-  background: rgba(228,217,187, .5);
+  background: rgba(228, 217, 187, 0.5);
   border-radius: 50px;
   cursor: pointer;
 }
@@ -245,29 +249,22 @@ textarea {
   font-size: 1.5em;
   padding: 1%;
 }
-.submitForm {
+#submitForm {
   display: block;
   box-sizing: border-box;
 }
 
-.hide-login {
-  display: none;
-}
-
-.Login {
-  display: none !important;
-}
 .drink-details {
-  background-color: rgba(228,217,187, .8);
+  background-color: rgba(228, 217, 187, 0.8);
   border-radius: 20px;
 }
 h4 {
   font-family: "Yellowtail", cursive;
-  color: #2C4353;
+  color: #2c4353;
   font-size: 4em;
   margin: 0;
 }
-.drink-details h4{
+.drink-details h4 {
   font-size: 1.5em;
 }
 .social {
@@ -277,11 +274,12 @@ h4 {
   justify-content: center;
   /* font-size: .5em; */
 }
-.ingredients-garnishes ul, .tags ul {
+.ingredients-garnishes ul,
+.tags ul {
   /* display: block; */
   margin: 0;
 }
-.ingredients-garnishes{
+.ingredients-garnishes {
   /* display: inline-flex;
   justify-content: space-around; */
   text-align: left;
@@ -293,9 +291,10 @@ h4 {
   justify-content: center;
 }
 .ingredients-garnishes span {
-
 }
-.ingredients, .garnishes, .tags {
+.ingredients,
+.garnishes,
+.tags {
   width: auto;
   margin: 1%;
   margin-bottom: 20px;
@@ -318,7 +317,6 @@ h4 {
   margin: 1%;
 }
 .tags {
-
   list-style-type: none;
   padding: 0;
   margin: 0 auto;
@@ -345,6 +343,26 @@ ol {
 ol li {
   margin: 1%;
 }
+
+.Log {
+  display: none;
+  text-align: center;
+}
+
+.hide-log {
+  display: none;
+}
+
+.Login {
+  display: none !important;
+  text-align: center;
+}
+
+.welcome {
+  text-align: center;
+  display: inline;
+}
+
 /* .recipes {
   width: 60%;
   margin: 0 auto;

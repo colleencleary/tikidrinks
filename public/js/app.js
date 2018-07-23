@@ -4,6 +4,7 @@ app.controller("MainController", [
   "$http",
   function($http) {
     const controller = this;
+    this.loggedIn = false;
     this.showDetails = false;
     this.showComments = false;
     this.createForm = {};
@@ -162,9 +163,7 @@ app.controller("MainController", [
         }
       );
     };
-
     this.logIn = function() {
-      // console.log('works');
       $http({
         method: "POST",
         url: "/sessions",
@@ -174,7 +173,8 @@ app.controller("MainController", [
         }
       }).then(
         function(response) {
-          console.log(response);
+          controller.loggedInUsername = response.data.user;
+          controller.user = "Logged In " + controller.username;
         },
         function() {
           console.log("error");
@@ -182,7 +182,6 @@ app.controller("MainController", [
       );
     };
 
-    // Log Out
     this.logOut = function() {
       $http({
         method: "DELETE",
@@ -190,6 +189,9 @@ app.controller("MainController", [
       }).then(
         function(response) {
           console.log("logged out");
+          controller.toggleLogin();
+          controller.loggedIn = false;
+          controller.user = "Login to Submit A Drink";
         },
         function() {
           console.log("error");
