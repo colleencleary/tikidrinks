@@ -206,10 +206,10 @@ app.controller("MainController", [
     };
 
     this.createDrink = () => {
-      this.createForm.ingredients = this.createForm.ingredients.split(",");
-      this.createForm.garnishes = this.createForm.garnishes.split(",");
-      this.createForm.tags = this.createForm.tags.split(",");
-      this.createForm.recipe = this.createForm.recipe.split(". ");
+      // this.createForm.ingredients = this.createForm.ingredients.split(",");
+      // this.createForm.garnishes = this.createForm.garnishes.split(",");
+      // this.createForm.tags = this.createForm.tags.split(",");
+      // this.createForm.recipe = this.createForm.recipe.split(". ");
 
       this.createForm.likes = 0;
       this.createForm.author = this.username;
@@ -230,6 +230,7 @@ app.controller("MainController", [
     };
 
     this.getDrinks = () => {
+      this.showDetails = false;
       $http({
         method: "GET",
         url: "/drinks"
@@ -264,10 +265,6 @@ app.controller("MainController", [
 
     this.updateDrink = drink => {
       console.log(this.createForm);
-      this.createForm.ingredients.split(",");
-      this.createForm.garnishes.split(",");
-
-      this.createForm.tags.split(",");
       $http({
         method: "PUT",
         url: "/drinks/" + drink._id,
@@ -276,6 +273,7 @@ app.controller("MainController", [
         response => {
           console.log(response);
           this.includePath = "partials/drinks.html";
+          this.showDetails = false;
 
         },
         error => {
