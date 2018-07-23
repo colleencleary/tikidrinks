@@ -68,7 +68,7 @@
 <div ng-show="ctrl.showComments" class="comments">
   <table>
     <tr ng-repeat="comment in ctrl.drink.comments">
-      <td>{{comment.author}} <br /> on <br /> {{comment.date | date:'MM/dd/yyyy @ h:mma'}}</td>
+      <td>{{comment.author}} <br /> on <br /> {{comment.date | date:'MM/dd/yy @ h:mma'}}</td>
       <td>{{comment.body}}</td>
     </tr>
   </table>

@@ -294,7 +294,7 @@ app.controller("MainController", [
 
     this.createComment = drink => {
       this.createForm.comment.author = this.username;
-      this.createForm.comment.date = new Date()
+      this.createForm.comment.date = new Date().getTime()
       console.log(this.createForm.comment);
       // console.log(drink);
       $http({
