@@ -353,4 +353,15 @@ app.controller("MainController", [
 
     this.getDrinks();
   }
+
+  // Yelp API stuff
+  // this.getLocations = ()=>{
+  //   $http({
+  //     method: 'GET',
+  //     url: 'https://api.yelp.com/v3/businesses/search',
+  //   }).then(response => {
+  //     }, error => {
+  //       console.error( error );
+  //     }).catch( err => console.error('Catch: ' , err ));)
+  //     }
 ]);
