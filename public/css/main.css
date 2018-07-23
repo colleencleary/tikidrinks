@@ -185,7 +185,8 @@ h3 {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
 }
 .content-container {
-  width: 80%;
+  width: 70%;
+  max-width: 1000px;
   text-align: center;
 }
 label {
@@ -267,6 +268,7 @@ textarea {
 .drink-details {
   background-color: rgba(228, 217, 187, 0.8);
   border-radius: 20px;
+  max-width: 1000px;
 }
 h4 {
   font-family: "Yellowtail", cursive;
@@ -310,8 +312,7 @@ h4 {
   margin-bottom: 20px;
 }
 .detail-image img {
-  display: block;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   object-fit: cover;
   object-position: center;
 }
@@ -347,10 +348,10 @@ h4 {
 ol {
   text-align: left;
   width: 70%;
-  margin: 0 auto;
+  margin: 0;
 }
 ol li {
-  margin: 1%;
+  margin: 1% 0;
 }
 
 .Log {
@@ -406,21 +407,22 @@ table {
   width: 500px;
 }
 .skullstill {
-  height: 40px;
-  width: auto;
+  width: 80px;
+  height: auto;
+  margin: 0;
 }
 .likeSkull {
   background: #281d1d;
-  width: 300px;;
-  /* height: 60px;
-  padding-bottom: 10px;
+  width: 300px;
+  height: 60px;
+  /* padding-bottom: 10px;
   padding-top: -10px; */
   border-radius: 10px;
-  /* margin-top: 10px; */
+  margin-top: 30px;
   overflow: hidden;
   display: inline-flex;
-  justify-content: left;
-  align-items: baseline;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -464,7 +466,7 @@ table {
   100% {
     display: none;
   }
-} */ */
+} */
 
 img.contacts {
   width: 100px;
