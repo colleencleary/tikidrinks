@@ -449,7 +449,7 @@ table {
 .unlike {
   z-index: 1;
 }
-.skullgif {
+/* .skullgif {
   z-index: 0;
   animation:freeze;
   animation-duration: 2s;
@@ -461,4 +461,4 @@ table {
   100% {
     display: none;
   }
-}
+} */
