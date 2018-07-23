@@ -231,6 +231,7 @@ app.controller("MainController", [
     };
 
     this.getDrinks = () => {
+      this.showDetails = false;
       $http({
         method: "GET",
         url: "/drinks"
@@ -265,10 +266,6 @@ app.controller("MainController", [
 
     this.updateDrink = drink => {
       console.log(this.createForm);
-     this.createForm.ingredients.split(",");
-     this.createForm.garnishes.split(",");
-
-      this.createForm.tags.split(",");
       $http({
         method: "PUT",
         url: "/drinks/" + drink._id,
@@ -277,6 +274,7 @@ app.controller("MainController", [
         response => {
           console.log(response);
           this.includePath = "partials/drinks.html";
+          this.showDetails = false;
 
         },
         error => {
