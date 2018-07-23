@@ -9,7 +9,7 @@ app.controller("MainController", [
     this.showComments = false;
     this.alreadyLiked = false;
     this.authorTools = false;
-    this.gifUrl= '../assets/skullstill.png'
+    this.gifUrl = "../assets/skullstill.png";
     this.createForm = {};
     this.drink = "";
     // this.currentUser = '';
@@ -162,7 +162,7 @@ app.controller("MainController", [
         }
       }).then(
         function(response) {
-          // console.log(response);
+          controller.changeInclude("drinks");
         },
         function() {
           console.log("error");
@@ -181,7 +181,7 @@ app.controller("MainController", [
         function(response) {
           controller.loggedInUsername = response.data.user;
           controller.user = "Welcome,  " + controller.username;
-          controller.changeInclude('drinks')
+          controller.changeInclude("drinks");
         },
         function() {
           console.log("error");
@@ -195,10 +195,8 @@ app.controller("MainController", [
         url: "/sessions"
       }).then(
         function(response) {
-          console.log("logged out");
           controller.toggleLogin();
           controller.loggedIn = false;
-          controller.user = "Login to Submit A Drink";
         },
         function() {
           console.log("error");
@@ -275,7 +273,6 @@ app.controller("MainController", [
           console.log(response);
           this.includePath = "partials/drinks.html";
           this.showDetails = false;
-
         },
         error => {
           console.log(error);
@@ -283,16 +280,16 @@ app.controller("MainController", [
       );
     };
 
-    this.goToEdit = (drink)=>{
-      this.createForm = this.drink
-      this.changeInclude('edit')
-    }
+    this.goToEdit = drink => {
+      this.createForm = this.drink;
+      this.changeInclude("edit");
+    };
 
     this.likeDrink = drink => {
       drink.likes++;
-      this.alreadyLiked = true
-      this.gifUrl= '../assets/skullgif.gif'
-      this.delayGifFreeze()
+      this.alreadyLiked = true;
+      this.gifUrl = "../assets/skullgif.gif";
+      this.delayGifFreeze();
       $http({
         method: "PUT",
         url: "/drinks/" + drink._id,
@@ -300,7 +297,6 @@ app.controller("MainController", [
       }).then(
         response => {
           console.log(response.data);
-
         },
         error => {
           console.log(error.message);
@@ -310,14 +306,14 @@ app.controller("MainController", [
 
     this.delayGifFreeze = () => {
       setTimeout(() => {
-        this.gifUrl= '../assets/skullstillAloha.png'
+        this.gifUrl = "../assets/skullstillAloha.png";
       }, 1000);
-    }
+    };
 
     this.unlikeDrink = drink => {
       drink.likes--;
       this.alreadyLiked = false;
-      this.gifUrl= '../assets/skullstill.png'
+      this.gifUrl = "../assets/skullstill.png";
       $http({
         method: "PUT",
         url: "/drinks/" + drink._id,
@@ -331,7 +327,6 @@ app.controller("MainController", [
         }
       );
     };
-
 
     this.createComment = drink => {
       this.createForm.comment.author = this.username;
