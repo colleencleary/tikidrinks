@@ -22,7 +22,15 @@
 
   <div class="small-container">
     <div class="detail-image">
-      <img class="details" src="{{ctrl.drink.image}}" alt="{{ctrl.drink.name}}">
+      <img class="details" src="{{ctrl.drink.image}}" alt="{{ctrl.drink.name}}" style="width: 300px; height: 300px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
+      <div class="likeSkull" ng-click="ctrl.alreadyLiked ? ctrl.unlikeDrink(ctrl.drink) : ctrl.likeDrink(ctrl.drink)" >
+        <img src="../assets/skullstill.png" alt="like this drink" class="likeSkull skullstill like" ng-show="!ctrl.showGif">
+        <h1 style="font-size: 3.5em; margin-left: -15px;" class="like" ng-show="!ctrl.showGif">Like!</h1>
+
+        <img src="../assets/skullstillAloha.png" alt="you liked this drink" class="likeSkull skullstill skullgif" ng-show="ctrl.showGif">
+        <img src="../assets/skullgif.gif" alt="you liked this drink" class="likeSkull skullstill" ng-show="ctrl.showGif">
+        <h1 style="font-size: 3em; margin-left: -15px;" class="unlike" ng-show="ctrl.showGif">Unlike</h1>
+      </div>
     </div>
 
 
@@ -39,18 +47,15 @@
           <li>{{garnish}}</li>
         </ul>
       </div>
-      <div class="likeSkull" ng-click="ctrl.alreadyLiked ? ctrl.unlikeDrink(ctrl.drink) : ctrl.likeDrink(ctrl.drink)" >
-        <img src="../assets/skullstill.png" alt="like this drink" class="skullstill" ng-class="ctrl.alreadyLiked ? 'freezeGif' : ''" ng-show="!ctrl.showGif">
-        <h1 style="font-size: 3.5em; margin-left: -15px;">Like!</h1>
-      </div>
-    </div>
-  </div>
+
+
   <div class="recipe">
     <ol>
       <li ng-repeat="step in ctrl.drink.recipe">{{step}}</li>
     </ol>
   </div>
-
+</div>
+</div>
   <div class="tag-container">
     <ul class="tags">
       <li>Tags: </li>
