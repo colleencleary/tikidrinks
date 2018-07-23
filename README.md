@@ -1,5 +1,6 @@
 # The Tipsy Tiki
- A tropical drink directory created while attending General Assembly's WDI-R course. Check it out here: https://tipsytiki.herokuapp.com/
+
+A tropical drink directory created while attending General Assembly's WDI-R course. Check it out here: https://tipsytiki.herokuapp.com/
 
 Made By:
 * Colleen Cleary
