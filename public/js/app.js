@@ -1,8 +1,8 @@
 const app = angular.module("TikiApp", []);
 
 app.controller("MainController", [
-  "$http",
-  function($http) {
+  "$http", "$timeout",
+  function($http, $timeout) {
     const controller = this;
     this.loggedIn = false;
     this.showDetails = false;

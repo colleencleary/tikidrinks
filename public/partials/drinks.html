@@ -40,7 +40,7 @@
         </ul>
       </div>
       <div class="likeSkull" ng-click="ctrl.alreadyLiked ? ctrl.unlikeDrink(ctrl.drink) : ctrl.likeDrink(ctrl.drink)">
-        <img src={{ctrl.gifUrl}} alt="like this drink" class="skullstill" ng-show="!ctrl.showGif">
+        <img ng-src={{ctrl.gifUrl}} alt="like this drink" class="skullstill" ng-show="!ctrl.showGif">
         <h1 style="font-size: 3.5em; margin-left: -15px;">Like!</h1>
       </div>
     </div>
