@@ -1,4 +1,4 @@
-# The Tipsy Tiki
+![screen shot 2018-07-23 at 4 05 12 pm](https://user-images.githubusercontent.com/37387868/43107637-d55bdf84-8e92-11e8-8e5d-8b99493e2987.png)
 
 A tropical drink directory created while attending General Assembly's WDI-R course. Check it out here: https://tipsytiki.herokuapp.com/
 
