@@ -7,6 +7,8 @@ app.controller("MainController", [
     this.loggedIn = false;
     this.showDetails = false;
     this.showComments = false;
+    this.alreadyLiked = false;
+    this.gifUrl= '../assets/skullstill.png'
     this.createForm = {};
     this.drink = "";
     // this.currentUser = '';
@@ -29,6 +31,10 @@ app.controller("MainController", [
 
     this.toggleComments = () => {
       this.showComments = !this.showComments;
+    };
+
+    this.toggleGif = () => {
+      this.showGif = !this.showGif;
     };
 
     this.changeInclude = path => {
@@ -279,6 +285,34 @@ app.controller("MainController", [
 
     this.likeDrink = drink => {
       drink.likes++;
+      this.alreadyLiked = true
+      this.gifUrl= '../assets/skullgif.gif'
+      this.delayGifFreeze()
+      $http({
+        method: "PUT",
+        url: "/drinks/" + drink._id,
+        data: { likes: drink.likes }
+      }).then(
+        response => {
+          console.log(response.data);
+
+        },
+        error => {
+          console.log(error.message);
+        }
+      );
+    };
+
+    this.delayGifFreeze = () => {
+      setTimeout(() => {
+        this.gifUrl= '../assets/skullstillAloha.png'
+      }, 1000);
+    }
+
+    this.unlikeDrink = drink => {
+      drink.likes--;
+      this.alreadyLiked = false;
+      this.gifUrl= '../assets/skullstill.png'
       $http({
         method: "PUT",
         url: "/drinks/" + drink._id,
@@ -292,6 +326,7 @@ app.controller("MainController", [
         }
       );
     };
+
 
     this.createComment = drink => {
       this.createForm.comment.author = this.username;
