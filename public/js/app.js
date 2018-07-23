@@ -14,7 +14,7 @@ app.controller("MainController", [
     this.createForm = {};
     this.drink = "";
     // this.currentUser = '';
-    this.test = "works";
+    // this.test = "works";
     this.includePath = "partials/drinks.html";
 
     //Toggle Login
@@ -181,7 +181,8 @@ app.controller("MainController", [
       }).then(
         function(response) {
           controller.loggedInUsername = response.data.user;
-          controller.user = "Welcome " + controller.username;
+          controller.user = "Welcome,  " + controller.username;
+          controller.changeInclude('drinks')
         },
         function() {
           console.log("error");
