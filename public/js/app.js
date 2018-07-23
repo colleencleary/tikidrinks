@@ -4,7 +4,6 @@ app.controller("MainController", [
   "$http",
   function($http) {
     const controller = this;
-    var _timeout;
     this.loggedIn = false;
     this.showDetails = false;
     this.showComments = false;
@@ -265,8 +264,8 @@ app.controller("MainController", [
 
     this.updateDrink = drink => {
       console.log(this.createForm);
-     this.createForm.ingredients.split(",");
-     this.createForm.garnishes.split(",");
+      this.createForm.ingredients.split(",");
+      this.createForm.garnishes.split(",");
 
       this.createForm.tags.split(",");
       $http({
@@ -311,13 +310,9 @@ app.controller("MainController", [
     };
 
     this.delayGifFreeze = () => {
-      _timeout = $timeout(function() {
-            this.gifUrl= '../assets/skullstillAloha.png'
-            _timeout = null;
-        }, 500);
-      // $timeout(() => {
-      //   this.gifUrl= '../assets/skullstillAloha.png'
-      // }, 1000);
+      setTimeout(() => {
+        this.gifUrl= '../assets/skullstillAloha.png'
+      }, 1000);
     }
 
     this.unlikeDrink = drink => {
