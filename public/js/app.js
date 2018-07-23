@@ -40,6 +40,10 @@ app.controller("MainController", [
     };
 
     this.changeInclude = path => {
+      if (path == 'drinks') {
+        this.getDrinks()
+        // this.showDetails = false;
+      }
       this.includePath = "partials/" + path + ".html";
     };
     // this.drinks = [
@@ -224,6 +228,7 @@ app.controller("MainController", [
         response => {
           this.drinks.push(response.data);
           this.createForm = {};
+          this.changeInclude('drinks')
         },
         error => {
           console.log(error);
@@ -246,6 +251,9 @@ app.controller("MainController", [
       );
     };
 
+    this.checkForDrink = (drink) => {
+    }
+
     this.deleteDrink = id => {
       // console.log(drink);
       $http({
@@ -261,6 +269,7 @@ app.controller("MainController", [
               drink => drink._id === id
             );
             this.drinks.splice(removeByIndex, 1);
+            this.getDrinks()
             this.includePath = "partials/drinks.html";
             this.showDetails = false;
           },
@@ -297,7 +306,7 @@ app.controller("MainController", [
     this.likeDrink = drink => {
       drink.likes++;
       this.alreadyLiked = true
-      this.gifUrl= '../assets/skullgif.gif'
+      // this.gifUrl= '../assets/skullgif.gif'
 
       $http({
         method: "PUT",
@@ -323,7 +332,7 @@ app.controller("MainController", [
     this.unlikeDrink = drink => {
       drink.likes--;
       this.alreadyLiked = false;
-      this.gifUrl= '../assets/skullstill.png'
+      // this.gifUrl= '../assets/skullstill.png'
       $http({
         method: "PUT",
         url: "/drinks/" + drink._id,

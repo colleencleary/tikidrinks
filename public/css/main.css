@@ -39,6 +39,9 @@ nav h5,
 .clickForDetail {
   cursor: pointer;
 }
+.clickForDetail {
+  width: auto;
+}
 h5 {
   margin-bottom: 0;
   padding-top: 30px;
@@ -435,6 +438,7 @@ table {
   font-size: 1.1em;
 }
 .freezeGif {
+<<<<<<< HEAD
   animation: freeze;
   animation-duration: 1s;
 }
@@ -444,6 +448,17 @@ table {
   }
   100% {
     content: "../assets/skullstillAloha.png";
+=======
+  animation:freeze;
+  animation-duration: 2s;
+}
+@keyframes freeze {
+  0% {
+    content: url('../assets/skullgif.gif');
+  }
+  100% {
+    content: url('../assets/skullstillAloha.png');
+>>>>>>> f432b503f2eb04cf75d4412a6311973c2876170a
   }
 }
 
