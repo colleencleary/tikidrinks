@@ -292,6 +292,7 @@ app.controller("MainController", [
         response => {
           console.log(response);
           this.changeInclude("drinks");
+          this.createForm = {};
         },
         error => {
           console.log(error);
@@ -352,17 +353,19 @@ app.controller("MainController", [
     this.createComment = drink => {
       this.createForm.comment.author = this.username;
       this.createForm.comment.date = new Date().getTime();
+      const updateComments = this.drink.comments.unshift(this.createForm.comment);
       console.log(this.createForm.comment);
       // console.log(drink);
       $http({
         method: "PUT",
         url: "/drinks/" + drink._id,
-        data: this.createForm.comment
+        data: {comments: updateComments}
       }).then(
         response => {
-          console.log(this.createForm.comment);
+          // console.log(this.drink.comments);
+          // console.log(response.data);
           console.log(response.data);
-          this.drink.comments.push(this.createForm.comment);
+          // this.drink.comments.unshift(this.createForm.comment);
           this.createForm = {};
           console.log(this.drink.comments);
         },
