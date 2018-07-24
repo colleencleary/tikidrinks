@@ -43,7 +43,7 @@ app.controller("MainController", [
       if (path == "drinks") {
         this.getDrinks();
         console.log(this.username);
-        console.log(req.sessions.username);
+        // console.log(req.sessions.username);
         // this.showDetails = false;
       }
       this.includePath = "partials/" + path + ".html";
@@ -190,9 +190,9 @@ app.controller("MainController", [
       }).then(
         function(response) {
           console.log(response);
-          controller.loggedInUsername = response.data.user;
-          controller.user = "Welcome,  " + controller.username;
-          controller.changeInclude("drinks");
+          this.loggedInUsername = response.data.user;
+          this.user = "Welcome,  " + this.username;
+          this.changeInclude("drinks");
         },
         function() {
           console.log("error");
@@ -207,8 +207,8 @@ app.controller("MainController", [
       }).then(
         function(response) {
           console.log("logged out");
-          controller.toggleLogin();
-          controller.loggedIn = false;
+          this.toggleLogin();
+          this.loggedIn = false;
           // controller.user = "Login to Submit A Drink";
           this.changeInclude("drinks");
         },
