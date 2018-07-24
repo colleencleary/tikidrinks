@@ -491,6 +491,11 @@ img.sean {
 }
 a.contacts {
   margin: 10px 0 50px 0;
+  color: #ca726e;
+}
+
+a.footerLink {
+  color: #ca726e;
 }
 
 a {
