@@ -1,7 +1,10 @@
 
-<form class="row"   ng-submit="ctrl.createUser()">
-  <h2>Create User</h2>
+<form class="row dark-background createUser"   ng-submit="ctrl.createUser()">
+  <h2 style="color: #2c4353; padding-bottom: 0">Create User</h2>
     <input type="text" ng-model="ctrl.username" placeholder="username"/>
     <input type="password" ng-model="ctrl.password" placeholder="password"/>
+    <input type="text" ng-model="ctrl.firstname" placeholder="first name"/>
+    <input type="text" ng-model="ctrl.location" placeholder="location"/>
+    <input type="email" ng-model="ctrl.email" placeholder="email"/>
     <input type="submit" value="Create User" ng-click="ctrl.toggleLogin()"/>
 </form>
