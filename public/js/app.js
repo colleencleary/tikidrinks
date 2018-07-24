@@ -203,7 +203,7 @@ app.controller("MainController", [
           console.log("logged out");
           controller.toggleLogin();
           controller.loggedIn = false;
-          controller.user = "Login to Submit A Drink";
+          // controller.user = "Login to Submit A Drink";
           this.changeInclude("drinks");
         },
         function() {
