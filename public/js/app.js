@@ -167,7 +167,7 @@ app.controller("MainController", [
         }
       }).then(
         function(response) {
-          // console.log(response);
+          console.log(response);
         },
         function() {
           console.log("error");
