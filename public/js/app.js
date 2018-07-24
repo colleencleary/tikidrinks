@@ -173,6 +173,7 @@ app.controller("MainController", [
       }).then(
         function(response) {
           console.log(response);
+          this.changeInclude("drinks"); // console.log(response);
         },
         function() {
           console.log("error");
@@ -190,6 +191,9 @@ app.controller("MainController", [
       }).then(
         function(response) {
           console.log(response);
+          console.log(response.data);
+          console.log('user:',response.data.user);
+          console.log('username:',response.data.username);
           this.loggedInUsername = response.data.user;
           this.user = "Welcome,  " + this.username;
           this.changeInclude("drinks");
