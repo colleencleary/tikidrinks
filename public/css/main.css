@@ -199,7 +199,7 @@ textarea {
   background: #2c4353;
   font-family: "Yellowtail", cursive;
   color: #e4d9bb;
-  font-size: 2em;
+  font-size: 1em;
   padding: 1%;
   margin-left: 10px;
   border: 1px solid #837f73;
@@ -382,7 +382,7 @@ ol li {
   padding-bottom: 50px;
 }
 td {
-  padding: 30px 0;
+  padding: 5px 0;
 }
 .comments table,
 .comments th,
