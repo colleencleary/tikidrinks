@@ -40,12 +40,16 @@ app.controller("MainController", [
     };
 
     this.changeInclude = path => {
-      if (path == "drinks") {
-        this.getDrinks();
-        console.log(this.username);
-        // console.log(req.sessions.username);
-        // this.showDetails = false;
-      }
+      this.includePath = "partials/" + path + ".html";
+    };
+
+    this.changeInclude = path => {
+      // if (path == "drinks") {
+      //   this.getDrinks();
+      //   console.log(this.username);
+      //   // console.log(req.sessions.username);
+      //   // this.showDetails = false;
+      // }
       this.includePath = "partials/" + path + ".html";
     };
     // this.drinks = [
@@ -208,10 +212,10 @@ app.controller("MainController", [
       }).then(
         function(response) {
           console.log("logged out");
-          this.toggleLogin();
-          this.loggedIn = false;
-          // controller.user = "Login to Submit A Drink";
-          this.changeInclude("drinks");
+          controller.toggleLogin();
+          controller.loggedIn = false;
+          controller.user = "Login to Submit A Drink";
+          controller.changeInclude("drinks");
         },
         function() {
           console.log("error");
