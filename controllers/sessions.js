@@ -15,6 +15,7 @@ router.delete("/", (req, res) => {
 router.post("/", (req, res) => {
   console.log(req.body);
   User.findOne({ username: req.body.username }, (err, foundUser) => {
+    console.log(foundUser);
     if (bcrypt.compareSync(req.body.password, foundUser.password)) {
       req.session.currentUser = foundUser;
       res.status(201).json({
