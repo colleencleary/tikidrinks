@@ -46,8 +46,6 @@ app.controller("MainController", [
     this.changeInclude = path => {
       if (path == "drinks") {
         this.getDrinks();
-        console.log(this.username);
-        // console.log(req.sessions.username);
         // this.showDetails = false;
       }
       this.includePath = "partials/" + path + ".html";
@@ -169,15 +167,11 @@ app.controller("MainController", [
         url: "/users",
         data: {
           username: this.username,
-          password: this.password,
-          firstname: this.firstname,
-          location: this.location,
-          email: this.email
+          password: this.password
         }
       }).then(
         function(response) {
-          console.log(response);
-          this.changeInclude("drinks"); // console.log(response);
+          controller.changeInclude("drinks"); // console.log(response);
         },
         function() {
           console.log("error");
@@ -194,19 +188,11 @@ app.controller("MainController", [
         }
       }).then(
         function(response) {
-          console.log(response);
-          console.log(response.data);
-          console.log('user:',response.data.user);
-          console.log('username:',response.data.username);
-          this.loggedInUsername = response.data.username;
-          this.user = "Welcome,  " + this.username;
-          this.changeInclude("drinks");
+          controller.loggedInUsername = response.data.user;
+          controller.user = "Welcome,  " + controller.username;
+          controller.changeInclude("drinks");
         },
-        function(response) {
-          console.log(response);
-          console.log(response.data);
-          console.log('user:',response.data.user);
-          console.log('username:',response.data.username);
+        function() {
           console.log("error");
         }
       );
