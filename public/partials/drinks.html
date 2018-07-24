@@ -22,7 +22,13 @@
 
   <div class="small-container">
     <div class="detail-image">
-      <img class="details" src="{{ctrl.drink.image}}" alt="{{ctrl.drink.name}}">
+      <img class="details" src="{{ctrl.drink.image}}" alt="{{ctrl.drink.name}}" style="width: 300px; height: 300px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); display: block; margin: 0 auto">
+
+      <div class="likeSkull" ng-click="ctrl.alreadyLiked ? ctrl.unlikeDrink(ctrl.drink) : ctrl.likeDrink(ctrl.drink)" ng-mouseover="ctrl.gifUrl = '../assets/skullgif.gif'" ng-mouseleave="ctrl.gifUrl = '../assets/skullstill.png'">
+        <img ng-src="{{ctrl.gifUrl}}" alt="like this drink" class="skullstill like" ng-show="!ctrl.showGif">
+        <h1 style="font-size: 3.5em;" class="like" ng-show="!ctrl.showGif">Like!</h1>
+        <h1 style="font-size: 3em;" class="unlike" ng-show="ctrl.showGif">Unlike</h1>
+      </div>
     </div>
 
 
@@ -39,18 +45,16 @@
           <li>{{garnish}}</li>
         </ul>
       </div>
-      <div class="likeSkull" ng-click="ctrl.alreadyLiked ? ctrl.unlikeDrink(ctrl.drink) : ctrl.likeDrink(ctrl.drink)" >
-        <img src="../assets/skullstill.png" alt="like this drink" class="skullstill" ng-class="ctrl.alreadyLiked ? 'freezeGif' : ''" ng-show="!ctrl.showGif">
-        <h1 style="font-size: 3.5em; margin-left: -15px;">Like!</h1>
-      </div>
-    </div>
-  </div>
+
+
   <div class="recipe">
+  <span style="">Steps:</span>
     <ol>
       <li ng-repeat="step in ctrl.drink.recipe">{{step}}</li>
     </ol>
   </div>
-
+</div>
+</div>
   <div class="tag-container">
     <ul class="tags">
       <li>Tags: </li>
@@ -60,6 +64,12 @@
       <li>tiki</li>
     </ul>
   </div>
+
+  <div ng-class ="(ctrl.loggedIn ? 'Log' : '')" style="">
+      <h5 class="comment-header" style="text-align: center; width: 100%;padding-bottom: 5px; padding-left: 0; margin: 0 auto; font-size: 1.5em"><span style="color: #2c4353" ng-click="ctrl.changeInclude('login')" style="cursor: pointer">Log in</span> to your account to comment on this drink!</h5>
+  </div>
+
+
   <div ng-class ="(ctrl.loggedIn ? '' : 'Log')" id="submitComment">
     <div id="smaller-container">
       <h5 class="comment-header" style="padding-bottom: 5px; padding-left: 0; width: 200px">comment on this drink!</h6>
