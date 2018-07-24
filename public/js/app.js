@@ -40,6 +40,10 @@ app.controller("MainController", [
     };
 
     this.changeInclude = path => {
+      this.includePath = "partials/" + path + ".html";
+    };
+
+    this.changeInclude = path => {
       if (path == "drinks") {
         this.getDrinks();
         // this.showDetails = false;
@@ -204,7 +208,7 @@ app.controller("MainController", [
           controller.toggleLogin();
           controller.loggedIn = false;
           controller.user = "Login to Submit A Drink";
-          this.changeInclude("drinks");
+          controller.changeInclude("drinks");
         },
         function() {
           console.log("error");
