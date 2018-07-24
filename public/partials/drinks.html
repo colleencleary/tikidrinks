@@ -25,7 +25,7 @@
       <img class="details" src="{{ctrl.drink.image}}" alt="{{ctrl.drink.name}}" style="width: 300px; height: 300px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); display: block; margin: 0 auto">
 
       <div class="likeSkull" ng-click="ctrl.alreadyLiked ? ctrl.unlikeDrink(ctrl.drink) : ctrl.likeDrink(ctrl.drink)" ng-mouseover="ctrl.gifUrl = '../assets/skullgif.gif'" ng-mouseleave="ctrl.gifUrl = '../assets/skullstill.png'">
-        <img ng-src="{{ctrl.gifUrl}}" alt="like this drink" class="skullstill like" ng-show="!ctrl.showGif">
+        <img ng-src="{{ctrl.gifUrl}}" alt="like this drink" class="skullstill like">
         <h1 style="font-size: 3.5em;" class="like" ng-show="!ctrl.showGif">Like!</h1>
         <h1 style="font-size: 3em;" class="unlike" ng-show="ctrl.showGif">Unlike</h1>
       </div>

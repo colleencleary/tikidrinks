@@ -177,7 +177,7 @@ h3 {
   padding-bottom: 200px;
   padding-top: 50px;
 }
-.drinks img {
+.clickForDetail img {
   height: 250px;
   width: 250px;
   object-position: center;
@@ -414,7 +414,7 @@ table {
 }
 .likeSkull {
   background: #281d1d;
-  width: 300px;
+  width: 250px;
   height: 60px;
   /* padding-bottom: 10px;
   padding-top: -10px; */
