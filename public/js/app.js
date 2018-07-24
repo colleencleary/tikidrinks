@@ -194,11 +194,15 @@ app.controller("MainController", [
           console.log(response.data);
           console.log('user:',response.data.user);
           console.log('username:',response.data.username);
-          this.loggedInUsername = response.data.user;
+          this.loggedInUsername = response.data.username;
           this.user = "Welcome,  " + this.username;
           this.changeInclude("drinks");
         },
-        function() {
+        function(response) {
+          console.log(response);
+          console.log(response.data);
+          console.log('user:',response.data.user);
+          console.log('username:',response.data.username);
           console.log("error");
         }
       );
