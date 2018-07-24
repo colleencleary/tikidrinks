@@ -1,7 +1,8 @@
 const app = angular.module("TikiApp", []);
 
 app.controller("MainController", [
-  "$http", "$timeout",
+  "$http",
+  "$timeout",
   function($http, $timeout) {
     const controller = this;
     this.loggedIn = false;
@@ -9,10 +10,10 @@ app.controller("MainController", [
     this.showComments = false;
     this.alreadyLiked = false;
     this.authorTools = false;
-    this.gifUrl= '../assets/skullstill.png'
+    this.gifUrl = "../assets/skullstill.png";
     this.createForm = {};
     this.drink = "";
-    this.drinks = ''
+    this.drinks = "";
     // this.currentUser = '';
     // this.test = "works";
     this.includePath = "partials/drinks.html";
@@ -40,8 +41,8 @@ app.controller("MainController", [
     };
 
     this.changeInclude = path => {
-      if (path == 'drinks') {
-        this.getDrinks()
+      if (path == "drinks") {
+        this.getDrinks();
         // this.showDetails = false;
       }
       this.includePath = "partials/" + path + ".html";
@@ -186,7 +187,7 @@ app.controller("MainController", [
         function(response) {
           controller.loggedInUsername = response.data.user;
           controller.user = "Welcome,  " + controller.username;
-          controller.changeInclude('drinks')
+          controller.changeInclude("drinks");
         },
         function() {
           console.log("error");
@@ -204,7 +205,7 @@ app.controller("MainController", [
           controller.toggleLogin();
           controller.loggedIn = false;
           controller.user = "Login to Submit A Drink";
-          this.changeInclude('drinks')
+          this.changeInclude("drinks");
         },
         function() {
           console.log("error");
@@ -229,7 +230,7 @@ app.controller("MainController", [
         response => {
           this.drinks.push(response.data);
           this.createForm = {};
-          this.changeInclude('drinks')
+          this.changeInclude("drinks");
         },
         error => {
           console.log(error);
@@ -252,8 +253,7 @@ app.controller("MainController", [
       );
     };
 
-    this.checkForDrink = (drink) => {
-    }
+    this.checkForDrink = drink => {};
 
     this.deleteDrink = id => {
       // console.log(drink);
@@ -270,8 +270,8 @@ app.controller("MainController", [
               drink => drink._id === id
             );
             this.drinks.splice(removeByIndex, 1);
-            this.getDrinks()
-            this.changeInclude('drinks')
+            this.getDrinks();
+            this.changeInclude("drinks");
           },
           error => {
             console.log(error);
@@ -288,8 +288,7 @@ app.controller("MainController", [
       }).then(
         response => {
           console.log(response);
-          this.changeInclude('drinks')
-
+          this.changeInclude("drinks");
         },
         error => {
           console.log(error);
@@ -297,15 +296,15 @@ app.controller("MainController", [
       );
     };
 
-    this.goToEdit = (drink)=>{
-      this.createForm = this.drink
-      this.changeInclude('edit')
-    }
+    this.goToEdit = drink => {
+      this.createForm = this.drink;
+      this.changeInclude("edit");
+    };
 
     this.likeDrink = drink => {
       drink.likes++;
-      this.alreadyLiked = true
-      this.toggleGif()
+      this.alreadyLiked = true;
+      this.toggleGif();
       // this.gifUrl= '../assets/skullgif.gif'
 
       $http({
@@ -346,7 +345,6 @@ app.controller("MainController", [
         }
       );
     };
-
 
     this.createComment = drink => {
       this.createForm.comment.author = this.username;
