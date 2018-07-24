@@ -177,7 +177,7 @@ h3 {
   padding-bottom: 200px;
   padding-top: 50px;
 }
-.drinks img {
+.clickForDetail img {
   height: 250px;
   width: 250px;
   object-position: center;
@@ -208,14 +208,15 @@ textarea {
   margin: 1% auto;
   text-indent: 10px;
 }
-input[type="submit"] {
+input[type="submit"], button {
   color: #e4d9bb;
   background: #2c4353;
+  margin: 10px auto;
   width: auto;
   text-align: center;
   font-family: "Slackey", cursive;
 }
-input[type="submit"]:hover {
+input[type="submit"]:hover, button:hover {
   color: #c94d46;
   background: #e4d9bb;
 }
@@ -413,7 +414,7 @@ table {
 }
 .likeSkull {
   background: #281d1d;
-  width: 300px;
+  width: 250px;
   height: 60px;
   /* padding-bottom: 10px;
   padding-top: -10px; */
@@ -490,6 +491,11 @@ img.sean {
 }
 a.contacts {
   margin: 10px 0 50px 0;
+  color: #ca726e;
+}
+
+a.footerLink {
+  color: #ca726e;
 }
 
 a {
@@ -500,3 +506,28 @@ a:hover{
   text-decoration: none;
   color: #f7e9ca;
 }
+.createUser input, .createUser textarea {
+    background: #2c4353;
+    font-family: "Yellowtail", cursive;
+    color: #e4d9bb;
+    font-size: 2em;
+    padding: 1%;
+    margin-left: 10px;
+    border: 1px solid #837f73;
+    width: 330px;
+    display: block;
+    margin: 1% auto;
+    text-indent: 10px;
+  }
+.createUser input[type="submit"], button {
+    color: #e4d9bb;
+    background: #2c4353;
+    margin: 10px auto;
+    width: auto;
+    text-align: center;
+    font-family: "Slackey", cursive;
+  }
+  .createUser input[type="submit"]:hover, button:hover {
+    color: #c94d46;
+    background: #e4d9bb;
+  }

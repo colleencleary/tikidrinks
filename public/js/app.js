@@ -168,7 +168,6 @@ app.controller("MainController", [
         }
       }).then(
         function(response) {
-          controller.changeInclude("drinks");
           // console.log(response);
         },
         function() {
@@ -206,6 +205,7 @@ app.controller("MainController", [
           controller.toggleLogin();
           controller.loggedIn = false;
           controller.user = "Login to Submit A Drink";
+          this.changeInclude("drinks");
         },
         function() {
           console.log("error");
@@ -271,8 +271,7 @@ app.controller("MainController", [
             );
             this.drinks.splice(removeByIndex, 1);
             this.getDrinks();
-            this.includePath = "partials/drinks.html";
-            this.showDetails = false;
+            this.changeInclude("drinks");
           },
           error => {
             console.log(error);
@@ -289,8 +288,7 @@ app.controller("MainController", [
       }).then(
         response => {
           console.log(response);
-          this.includePath = "partials/drinks.html";
-          this.showDetails = false;
+          this.changeInclude("drinks");
         },
         error => {
           console.log(error);
