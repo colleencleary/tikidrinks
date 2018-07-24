@@ -1,10 +1,11 @@
-<h2 style="color: #c94d46; padding-bottom: 0">Log In</h2>
-<form class="row dark-background" ng-submit="ctrl.logIn()" style="padding-bottom: 10px;">
+<form class="row dark-background" ng-submit="ctrl.logIn()" ng-class="(ctrl.showLogin ? 'Logged' : '') + ' ' + (ctrl.loggedIn ? 'Log' : '')" style="padding-bottom: 10px;">
+  <h2 style="color: #c94d46; padding-bottom: 0">Log In</h2>
     <input type="text" ng-model="ctrl.username" placeholder="username"/>
     <input type="password" ng-model="ctrl.password" placeholder="password"/>
     <input type="submit" value="Log In" ng-click="ctrl.toggleLogout()"/>
+    <h3 class="create-account" ng-click="ctrl.changeInclude('createAccount')">Need to create an account?</h3>
 </form>
-<h3 class="create-account" ng-click="ctrl.changeInclude('createAccount')">Need to create an account?</h3>
+
 
 
 
