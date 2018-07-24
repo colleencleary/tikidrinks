@@ -168,7 +168,7 @@ app.controller("MainController", [
         }
       }).then(
         function(response) {
-          // console.log(response);
+          controller.changeInclude("drinks"); // console.log(response);
         },
         function() {
           console.log("error");
