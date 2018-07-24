@@ -1,0 +1,104 @@
+<!-- <h2>Tiki Drinks</h2> -->
+<label for="Search by">
+	<input type='text' placeholder='Search...' ng-model='searchBox'>
+</label>
+
+<div class="drink-details" ng-show="ctrl.showDetails">
+  <h6 ng-click="ctrl.showDetails=false" style="width: 100%; text-align: right; color: #c94d46; font-size: 2em; margin: 0; padding: 2%; cursor: pointer">X</h6>
+  <h1>{{ctrl.drink.name}}</h1>
+
+  <h4>submitted by: {{ctrl.drink.author}}</h4>
+  <div class="social">
+    <h4>{{ctrl.drink.likes}} likes | </h4>
+    <h4>{{ctrl.drink.comments.length}} comments</h4>
+  </div>
+	<br />
+	<!-- edit drink -->
+	<div class="social" style='justify-content: space-between; width: 20%' >
+		<h4 ng-click="ctrl.goToEdit(ctrl.drink)" style='color: #ca7263'> edit</h4>
+		<h4 ng-click='ctrl.deleteDrink(ctrl.drink._id)' style='color: #ca7263'>delete</h4>
+	</div>
+  <h4 style="width: 60%; margin: 5px auto; color: #747274">{{ctrl.drink.description}}</h4>
+
+  <div class="small-container">
+    <div class="detail-image">
+      <img class="details" src="{{ctrl.drink.image}}" alt="{{ctrl.drink.name}}" style="width: 300px; height: 300px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); display: block; margin: 0 auto">
+
+      <div class="likeSkull" ng-click="ctrl.alreadyLiked ? ctrl.unlikeDrink(ctrl.drink) : ctrl.likeDrink(ctrl.drink)" ng-mouseover="ctrl.gifUrl = '../assets/skullgif.gif'" ng-mouseleave="ctrl.gifUrl = '../assets/skullstill.png'">
+        <img ng-src="{{ctrl.gifUrl}}" alt="like this drink" class="skullstill like">
+        <h1 style="font-size: 3.5em;" class="like" ng-show="!ctrl.showGif">Like!</h1>
+        <h1 style="font-size: 3em;" class="unlike" ng-show="ctrl.showGif">Unlike</h1>
+      </div>
+    </div>
+
+
+    <div class="ingredients-garnishes">
+      <div class="ingredients">
+        <span style="">Ingredients:</span>
+        <ul ng-repeat="ingredient in ctrl.drink.ingredients">
+          <li>{{ingredient}}</li>
+        </ul>
+      </div>
+      <div class="garnishes">
+        <span style="">Optional Garnishes:</span>
+        <ul ng-repeat="garnish in ctrl.drink.garnishes">
+          <li>{{garnish}}</li>
+        </ul>
+      </div>
+
+
+  <div class="recipe">
+  <span style="">Steps:</span>
+    <ol>
+      <li ng-repeat="step in ctrl.drink.recipe">{{step}}</li>
+    </ol>
+  </div>
+</div>
+</div>
+  <div class="tag-container">
+    <ul class="tags">
+      <li>Tags: </li>
+      <span ng-repeat="tag in ctrl.drink.tags">
+    <li>{{tag}},</li>
+  </span>
+      <li>tiki</li>
+    </ul>
+  </div>
+
+  <div ng-class ="(ctrl.loggedIn ? 'Log' : '')" style="">
+      <h5 class="comment-header" style="text-align: center; width: 100%;padding-bottom: 5px; padding-left: 0; margin: 0 auto; font-size: 1.5em"><span style="color: #2c4353" ng-click="ctrl.changeInclude('login')" style="cursor: pointer">Log in</span> to your account to comment on this drink!</h5>
+  </div>
+
+
+  <div ng-class ="(ctrl.loggedIn ? '' : 'Log')" id="submitComment">
+    <div id="smaller-container">
+      <h5 class="comment-header" style="padding-bottom: 5px; padding-left: 0; width: 200px">comment on this drink!</h6>
+
+        <form ng-submit='ctrl.createComment(ctrl.drink)' class="submitForm" style="padding-top: 0; width: 500px;">
+            <textarea type="text" ng-model='ctrl.createForm.comment.body' rows="4" style="margin: 0;"></textarea>
+
+          <input type="submit" value="submit" style="margin: 0 auto; text-align: center; width: 190px;">
+        </form>
+    </div>
+  </div>
+
+<h6 ng-click="ctrl.toggleComments()" class="comment-header" ng-show="!ctrl.showComments">Show Comments</h6>
+<h6 ng-click="ctrl.toggleComments()" class="comment-header" ng-show="ctrl.showComments">Hide Comments</h6>
+
+<div ng-show="ctrl.showComments" class="comments">
+  <table>
+    <tr ng-repeat="comment in ctrl.drink.comments">
+      <td>{{comment.author}} <br /> on <br /> {{comment.date | date:'MM/dd/yy @ h:mma'}}</td>
+      <td>{{comment.body}}</td>
+    </tr>
+  </table>
+</div>
+
+</div>
+
+<div class="rows">
+    <div ng-repeat="drink in ctrl.drinks | filter: searchBox" class="clickForDetail" ng-click="ctrl.toggleDetails(drink)" ng-if="drink.name">
+      <img src="{{drink.image}}" alt="{{drink.name}}">
+      <h3>{{drink.name}}</h3>
+    </div>
+</div>
